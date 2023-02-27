@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavBar } from './Components/NavBar'
+import { ItemListContainer } from './Components/ItemListContainer'
 // import { ItemListContainer } from './Components/ItemListContainer'
 import './App.css'
 
@@ -10,8 +11,8 @@ function App() {
 
   return (
     <>
-      <NavBar nombre = {brand} menu = {menu} cant = "4"/>
-      {/* <ItemListContainer greeting={`Bienvenido a ${brand}`}/> */}
+      <NavBar select = {true} nombre = {brand} menu = {menu} cant = "4"/>
+      <ItemListContainer greeting={`Bienvenido a ${brand}`}/>
     </>
   )
 }
