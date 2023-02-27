@@ -18,7 +18,7 @@ export function CartWidget({cant}){
     }
     return(
         <div style={estilo.contenedor}>
-            <button style={estilo.boton}><img style={estilo.img} src={Carrito}></img></button>
+            <button className='carrito' style={estilo.boton}><img style={estilo.img} src={Carrito}></img></button>
             <p>{cant}</p>
         </div>
     )
