@@ -1,5 +1,6 @@
 import { CartWidget} from "../CartWidget"
 // import { Button } from "../Button";
+
 //menu es un array, lo que permite añadir elemnentos de manera mas sencilla
 //por cada elemento del array menu se crea una etiqueta button
 
