@@ -1,12 +1,17 @@
 import { CartWidget} from "../CartWidget"
-// import { Button } from "../Button";
+import { Button } from "../Button";
+import { useEffect, useState } from "react";
 
 //menu es un array, lo que permite añadir elemnentos de manera mas sencilla
 //por cada elemento del array menu se crea una etiqueta button
 
 
-export function NavBar({nombre,menu,select}){
-    let clicked = false;
+export function NavBar({nombre,menu,hijoAPadre}){
+    let [clicked, setClicked] = useState('');
+    useEffect(() =>{
+        console.log(`hola ${clicked}`);
+    })
+    // console.log(hijoAPadre)
     // let color = '#FFFF00'
     let estilo = {
         nav:{
@@ -23,18 +28,12 @@ export function NavBar({nombre,menu,select}){
             listStyle:'none',
             justifySelf:'center',
             gap:'20px'
-        },
-        boton:{
-            border:'none',
-            // color:'red'
         }
-    }
-    function onClick(){
-        
     }
     let arr = []
     menu.map(item=>{
-        arr.push(<li><button style={estilo.boton}>{item}</button></li>)
+        // arr.push(<li><button style={estilo.boton}>{item}</button></li>)
+        arr.push(<li  key={item}><button onClick={() => hijoAPadre({item})}>{item}</button></li>)
     })
     return(
         <nav style={estilo.nav}>
