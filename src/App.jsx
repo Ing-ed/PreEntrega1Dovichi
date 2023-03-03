@@ -14,8 +14,8 @@ function App() {
   return (
     <>
       <NavBar select = {true} nombre = {brand} menu = {menu} cant = "4"/>
-      <ItemListContainer greeting={`Bienvenido a ${brand}`}/>
-      <ItemList productos={productos}/>
+      <ItemListContainer productos={productos}/>
+      {/* <ItemList productos={productos}/> */}
     </>
   )
 }

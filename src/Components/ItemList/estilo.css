@@ -1,0 +1,7 @@
+.itemList{
+    display:flex;
+    flex-direction: column;
+    gap:20px
+    /* justify-content: ; */
+    /* align-items: flex-start; */
+}

@@ -1,7 +1,8 @@
-
+import Pic from '../../assets/18f2550.png'
+import Lpc from '../../assets/1769.png'
+import Esp from '../../assets/esp32.png'
 export let productos = [
-    {id:"pr1",title:"titulo1",description:"descr",picture:'./../assets/18f2550.png'},
-    {id:"pr2",title:"titulo2",description:"descr",picture:"pic"},
-    {id:"pr3",title:"titulo3",description:"descr",picture:"pic"},
-    {id:"pr4",title:"titulo4",description:"descr",picture:"pic"},
+    {id:"Pic",title:"18F2550",description:"Pic 18F2550",picture: Pic},
+    {id:"Esp",title:"Esp32",description:"Esp32",picture:Esp},
+    {id:"Lpc",title:"1769",description:"Lpc1769",picture:Lpc},
 ]
