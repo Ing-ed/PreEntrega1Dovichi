@@ -4,7 +4,7 @@ import { ItemList } from "../ItemList";
 import "./estilo.css";
 
 
-export function ItemListContainer({productos}){
+export function ItemListContainer({productos,add}){
     let [getProds, setProds] = useState([])
 
     useEffect(() =>{
@@ -17,8 +17,8 @@ export function ItemListContainer({productos}){
 
     
     return(
-        <div>
-            <ItemList productos={getProds}/>
+        <div className="itemListCont">
+            <ItemList add = {add} productos={getProds}/>
         </div>
     )
 }

@@ -1,6 +1,9 @@
-ul{
+.itemListCont{
+    padding:10rem 3rem;
     list-style: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }

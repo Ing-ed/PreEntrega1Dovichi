@@ -1,12 +1,20 @@
 .item{
+    list-style: none;
     width: 200px;
-    background-color: aquamarine;
-    border: 2px solid red;
-    border-radius: 25%;
+    height: 400px;
+    background-color: #FFF;
+    /* border: 2px solid red; */
+    border-radius: 20px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    padding:1rem;
     /* align-items: center; */
+}
+.item *{
+    color:#232323;
+    font-weight: bold;
+    background-color: transparent;
 }
 .item img{
     width: 100%;

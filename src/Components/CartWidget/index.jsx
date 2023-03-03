@@ -6,7 +6,7 @@ export function CartWidget({cant}){
         },
         img:{
             width:'50px',
-            borderRadius:'25%',
+            borderRadius:'10px',
             border:'none',
             backgroundColor:'#FAFAFA'
         },

@@ -1,12 +1,11 @@
 import { CartWidget} from "../CartWidget"
-import { Button } from "../Button";
 import { useEffect, useState } from "react";
 
 //menu es un array, lo que permite añadir elemnentos de manera mas sencilla
 //por cada elemento del array menu se crea una etiqueta button
 
 
-export function NavBar({nombre,menu,hijoAPadre}){
+export function NavBar({nombre,menu,hijoAPadre,cant}){
     let [clicked, setClicked] = useState('');
     let estilo = {
         nav:{
@@ -36,7 +35,7 @@ export function NavBar({nombre,menu,hijoAPadre}){
             <ul style={estilo.lista}>
                 {arr}
             </ul>
-            <CartWidget cant={20}/>
+            <CartWidget cant={cant}/>
         </nav>
     )
 }
