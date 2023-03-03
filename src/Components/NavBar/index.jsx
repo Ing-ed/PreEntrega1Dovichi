@@ -8,11 +8,6 @@ import { useEffect, useState } from "react";
 
 export function NavBar({nombre,menu,hijoAPadre}){
     let [clicked, setClicked] = useState('');
-    useEffect(() =>{
-        console.log(`hola ${clicked}`);
-    })
-    // console.log(hijoAPadre)
-    // let color = '#FFFF00'
     let estilo = {
         nav:{
             display:'flex',
