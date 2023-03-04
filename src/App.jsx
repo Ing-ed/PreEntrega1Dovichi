@@ -13,18 +13,22 @@ let brand = "IngED - Electronics"
 
 function App() {
   let [getCant,setCant] = useState(0)
+  let [getSelect,setSelect] = useState("uControladores")
 
   function sumar(cantidad){
-    // setCant(getCant + cantidad)
-    console.log(getCant,"Aca")
+    setCant(getCant + cantidad)
+    // console.log(cantidad)
+  }
+  function select(sel){
+    setSelect(sel)
   }
   
 
   console.log(getCant, "inicio")
   return (
     <>
-      <NavBar select = {true} nombre = {brand} menu = {menu} cant = {getCant}/>
-      <ItemListContainer add = {() => sumar} productos={productos}/>
+      <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
+      <ItemListContainer greeting={getSelect} add = {sumar} productos={productos}/>
       {/* <ItemList productos={productos}/> */}
     </>
   )

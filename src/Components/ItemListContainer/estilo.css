@@ -6,4 +6,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap:5rem;
+}
+.greeting{
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
 }

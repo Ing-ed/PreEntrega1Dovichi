@@ -19,7 +19,7 @@ export function Add({add}){
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
-            <button className="Button" onClick={() => add(getCant)}>Añadir</button>
+            <button className="Button" onClick={() => add(+getCant)}>Añadir</button>
         </div>
     )
 }

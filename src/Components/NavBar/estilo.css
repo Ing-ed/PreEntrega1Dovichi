@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+nav *{
+    font-size: 20px;
+}
+.lista {
+    width: 100%;
+    list-style: none;
+    display:flex;
+    justify-content: center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+.Nombre{
+    width:fit-content;
+}
+.menu:active{
+    background-color: #FAFAFA;
+    color:#232323;
+}
