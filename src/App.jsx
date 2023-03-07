@@ -6,6 +6,7 @@ import { productos } from './Components/Mocks/productos'
 import { useState,useEffect } from 'react'
 // import { ItemListContainer } from './Components/ItemListContainer'
 import './App.css'
+import { ItemDetailContainer } from './Components/itemDetailContainer'
 
 let menu = ["uControladores","Placas de desarrollo","Servicios","Quienes somos?"]
 let brand = "IngED - Electronics"
@@ -13,7 +14,7 @@ let brand = "IngED - Electronics"
 
 function App() {
   let [getCant,setCant] = useState(0)
-  let [getSelect,setSelect] = useState("uControladores")
+  let [getSelect,setSelect] = useState("Inicio")
 
   function sumar(cantidad){
     setCant(getCant + cantidad)
@@ -28,8 +29,8 @@ function App() {
   return (
     <>
       <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
-      <ItemListContainer greeting={getSelect} add = {sumar} productos={productos}/>
-      {/* <ItemList productos={productos}/> */}
+      <ItemListContainer section={getSelect} add = {sumar} productos={productos}/>
+      {/* <ItemDetailContainer/> */}
     </>
   )
 }

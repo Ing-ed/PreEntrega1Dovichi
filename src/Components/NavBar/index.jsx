@@ -15,7 +15,7 @@ export function NavBar({nombre,menu,cant,select}){
     })
     return(
         <nav >
-            <h3 className="Nombre">{nombre}</h3>
+            <h3 onClick={() => select("Inicio")} className="Nombre">{nombre}</h3>
             <ul className="lista" >
                 {arr}
             </ul>
