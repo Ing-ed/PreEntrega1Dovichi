@@ -1,0 +1,29 @@
+.itemDetail{
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    /* border:2px solid red; */
+    background-color: #FAFAFA;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    gap:4rem;
+}
+.itemDetail *{
+    background-color: #FAFAFA;
+    color:#232323;
+    font-weight: bold;
+    font-size: 20px;
+}
+.itemDetail ul{
+    padding:0 1.5rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: solid #232323;
+    /* margin-top: 15rem; */
+}

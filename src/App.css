@@ -4,7 +4,11 @@
     background-color: #232323;
     color:#FAFAFA;
 }
-
+#root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .carrito:focus{
     background-color: #A0A0A0;
 }

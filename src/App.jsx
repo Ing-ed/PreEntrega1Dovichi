@@ -29,8 +29,8 @@ function App() {
   return (
     <>
       <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
-      <ItemListContainer section={getSelect} add = {sumar} productos={productos}/>
-      {/* <ItemDetailContainer/> */}
+      {/* <ItemListContainer section={getSelect} add = {sumar} productos={productos}/> */}
+      <ItemDetailContainer productos={productos}/>
     </>
   )
 }

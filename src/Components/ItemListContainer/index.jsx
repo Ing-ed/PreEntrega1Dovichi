@@ -1,4 +1,3 @@
-import { Item } from "../Item";
 import { useState, useEffect } from "react";
 import { ItemList } from "../ItemList";
 import "./estilo.css";
