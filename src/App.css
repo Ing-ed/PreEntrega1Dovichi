@@ -15,6 +15,21 @@
 button{
     border:none;
 }
+button:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    /* box-shadow: 0px 0px 2px black,
+                0px 0px 5px black,
+                0px 0px 5px black,
+                0px 0px 9px black,
+                0px 0px 9px black,
+                0px 0px 9px black,
+                0px 0px 12px #FAFAFA,
+                0px 0px 12px #FAFAFA,
+                0px 0px 12px #FAFAFA,
+                0px 0px 12px #FAFAFA,
+                0px 0px 12px #FAFAFA; */
+}
 button:active{
     background-color: #232323;
     color:#FAFAFA;
