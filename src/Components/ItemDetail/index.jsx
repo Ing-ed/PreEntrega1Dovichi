@@ -1,4 +1,4 @@
-import { productos } from "../Mocks/productos";
+// import { productos } from "../Mocks/productos";
 import "./estilo.css"
 
 
