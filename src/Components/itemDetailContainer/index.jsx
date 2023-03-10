@@ -12,7 +12,7 @@ export function ItemDetailContainer({productos}){
         let Productos = new Promise((resolve,reject) =>{
             setTimeout(() => resolve(productos),2000)
         })
-        // .then((resp) =>console.log(resp))
+        .then((resp) =>console.log(resp))
         .then((resp) =>setProds(resp[0]))
         .catch(console.log("ERROR"))
     },[])
