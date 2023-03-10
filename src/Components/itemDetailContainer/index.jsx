@@ -21,6 +21,7 @@ export function ItemDetailContainer({productos,section}){
         <div className="itemListCont">
             <h1 className="greeting">{section}</h1>
             <ItemDetail producto={getProds}/>
+            j
         </div>
     )
 }
