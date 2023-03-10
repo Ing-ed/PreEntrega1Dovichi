@@ -14,7 +14,7 @@ export let productos =[
         description:"lorem ipsum",
         price:"2",
         picture:Pic,
-        category:"uProcesadores"
+        category:"uControladores"
     },
     {
         id:"32",
@@ -22,7 +22,7 @@ export let productos =[
         description:"lorem ipsum",
         price:"2",
         picture:Esp,
-        category:"uProcesadores"
+        category:"uControladores"
     },
     {
         id:"1769",
@@ -30,6 +30,6 @@ export let productos =[
         description:"lorem ipsum",
         price:"2",
         picture:Lpc,
-        category:"uProcesadores"
+        category:"uControladores"
     },
 ]

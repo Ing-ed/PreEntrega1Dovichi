@@ -1,5 +1,6 @@
 import { CartWidget} from "../CartWidget"
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./estilo.css";
 
 //menu es un array, lo que permite añadir elemnentos de manera mas sencilla
@@ -11,7 +12,7 @@ export function NavBar({nombre,menu,cant,select}){
     let arr = []
     menu.map(item=>{
         // arr.push(<li><button style={estilo.boton}>{item}</button></li>)
-        arr.push(<li  key={item}><button className="menu" onClick={() => select(item)}>{item}</button></li>)
+        arr.push(<Link to ={`/${item}`}><li key={item}><button className="menu" onClick={() => select(item)}>{item}</button></li></Link>)
     })
     return(
         <nav >

@@ -12,7 +12,7 @@ let brand = "IngED - Electronics"
 
 
 function ItemRoot() {
-  const {param} = useParams();
+  let {param} = useParams();
   let [getCant,setCant] = useState(0)
   let [getSelect,setSelect] = useState("Inicio")
 
@@ -25,13 +25,13 @@ function ItemRoot() {
   }
   
 
-  console.log(Boolean(useParams()),"param")
+  // console.log((useParams().category),"param")
   // console.log(getCant, "inicio")
   return (
     <>
       <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
-      {/* <ItemListContainer section={getSelect} add = {sumar} productos={productos}/> */}
-      <ItemDetailContainer productos={productos} section = {getSelect}/>
+      <ItemListContainer section={useParams().category} add = {sumar} productos={productos}/>
+      {/* <ItemDetailContainer productos={productos} section = {getSelect}/> */}
     </>
   )
 }
