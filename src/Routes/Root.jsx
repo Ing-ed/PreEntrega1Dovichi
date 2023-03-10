@@ -12,9 +12,9 @@ let brand = "IngED - Electronics"
 
 
 function Root() {
-  const {param} = useParams();
+  // const {param} = useParams();
   let [getCant,setCant] = useState(0)
-  let [getSelect,setSelect] = useState("Inicio")
+  // let [getSelect,setSelect] = useState("Inicio")
 
   function sumar(cantidad){
     setCant(getCant + cantidad)
@@ -29,8 +29,8 @@ function Root() {
   // console.log(getCant, "inicio")
   return (
     <>
-      <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
-      <ItemListContainer section={getSelect} add = {sumar} productos={productos}/>
+      <NavBar nombre = {brand} menu = {menu} cant = {getCant}/>
+      <ItemListContainer section={useParams().category} add = {sumar} productos={productos}/>
       {/* <ItemDetailContainer productos={productos}/> */}
     </>
   )

@@ -5,6 +5,7 @@ import "./estilo.css";
 
 export function ItemListContainer({productos,add,section}){
     let [getProds, setProds] = useState([])
+    let inicio = ""
     useEffect(() =>{
         let Productos = new Promise((resolve,reject) =>{
             setTimeout(() => resolve(productos),2000)
@@ -17,6 +18,7 @@ export function ItemListContainer({productos,add,section}){
                 console.log(r,"R",section,"seccion")
             }
             else{
+                inicio = "Inicio"
                 setProds(resp)
             }
         })
@@ -29,7 +31,7 @@ export function ItemListContainer({productos,add,section}){
     
     return(
         <div className="itemListCont">
-            <h1 className="greeting">{section}</h1>
+            {/* <h1 className="greeting">{section}</h1> */}
             <ItemList add = {add} productos={getProds}/>
         </div>
     )
