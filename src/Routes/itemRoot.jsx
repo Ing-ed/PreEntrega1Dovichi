@@ -1,17 +1,18 @@
 // import { useState } from 'react'
-import { NavBar } from './Components/NavBar'
-import { ItemListContainer } from './Components/ItemListContainer'
-import { productos } from './Mocks/productos'
+import { NavBar } from '../Components/NavBar'
+import { ItemListContainer } from '../Components/ItemListContainer'
+import { productos } from '../Mocks/productos'
 import { useState,useEffect } from 'react'
-// import { ItemListContainer } from './Components/ItemListContainer'
+import { useParams } from 'react-router-dom'
 import './App.css'
-import { ItemDetailContainer } from './Components/itemDetailContainer'
+import { ItemDetailContainer } from '../Components/itemDetailContainer'
 
 let menu = ["uControladores","Placas de desarrollo","Servicios","Quienes somos?"]
 let brand = "IngED - Electronics"
 
 
-function App() {
+function ItemRoot() {
+  const {param} = useParams();
   let [getCant,setCant] = useState(0)
   let [getSelect,setSelect] = useState("Inicio")
 
@@ -24,14 +25,15 @@ function App() {
   }
   
 
-  console.log(getCant, "inicio")
+  console.log(Boolean(useParams()),"param")
+  // console.log(getCant, "inicio")
   return (
     <>
       <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
       {/* <ItemListContainer section={getSelect} add = {sumar} productos={productos}/> */}
-      <ItemDetailContainer productos={productos}/>
+      <ItemDetailContainer productos={productos} section = {getSelect}/>
     </>
   )
 }
 
-export default App
+export default ItemRoot

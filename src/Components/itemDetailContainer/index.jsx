@@ -5,7 +5,7 @@ import "./estilo.css"
 
 
 
-export function ItemDetailContainer({productos}){
+export function ItemDetailContainer({productos,section}){
     let [getProds,setProds] = useState([])
 
     useEffect(() =>{
@@ -18,8 +18,9 @@ export function ItemDetailContainer({productos}){
     },[])
 
     return(
-        <div className="itemDetCont">
-            <ItemDetail producto={getProds}></ItemDetail>
+        <div className="itemListCont">
+            <h1 className="greeting">{section}</h1>
+            <ItemDetail producto={getProds}/>
         </div>
     )
 }

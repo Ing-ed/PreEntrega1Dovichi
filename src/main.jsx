@@ -1,16 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
-import {createBrowserRouter,RouteProvicer} from 'react-router-dom'
+import Root from './Routes/Root'
+import ItemRoot from './Routes/itemRoot'
+import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import './index.css'
+import { ItemDetailContainer } from './Components/itemDetailContainer'
 
-// let router = createBrowserRouter(){
-  
-// } 
+let router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />
+  },
+  {
+    path:"/:category",
+    element: <ItemRoot />
+  }
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
