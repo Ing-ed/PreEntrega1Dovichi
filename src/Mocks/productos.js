@@ -4,11 +4,6 @@ import Esp from '../assets/esp32.png'
 import ArduinoDev from '../assets/ArduinoDev.png'
 import esp32Dev from '../assets/esp32Dev.png'
 import lpcDev from '../assets/lpcDev.png'
-// export let productos = [
-//     {id:"Pic",title:"18F2550",description:"Pic micro description",picture: Pic, price:"price"},
-//     {id:"Esp",title:"Esp32",description:"Esp32 description",picture:Esp, price:"price"},
-//     {id:"Lpc",title:"Lpc1769",description:"Lpc1769 description",picture:Lpc, price:"price"},
-// ]
 
 export let productos =[
     {
