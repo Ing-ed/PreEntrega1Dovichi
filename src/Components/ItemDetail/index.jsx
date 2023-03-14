@@ -3,15 +3,16 @@ import "./estilo.css"
 
 
 export function ItemDetail({producto}){
-    // console.log(producto)
     return(
         <div className="itemDetail">
             <ul>
                 <li><p>{producto.title}</p></li>
                 <li><img src={producto.picture}/></li>
-                <li><p>{producto.price}</p></li>
+                <li><p>${producto.price}</p></li>
             </ul>
+            {/* <hr/> */}
             <p>{producto.description}</p>
+            {/* </ul> */}
         </div>
     )
 }
