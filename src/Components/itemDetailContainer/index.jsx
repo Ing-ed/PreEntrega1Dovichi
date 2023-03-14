@@ -6,7 +6,7 @@ import "./estilo.css"
 
 
 
-export function ItemDetailContainer({productos}){
+export function ItemDetailContainer({productos,add}){
     let [getProds,setProds] = useState([])
     const {ID} = useParams();
     console.log(ID, "id")
@@ -27,7 +27,7 @@ export function ItemDetailContainer({productos}){
     return(
         <div className="itemListCont">
             {/* <h1 className="greeting">Hola</h1> */}
-            <ItemDetail producto={getProds}/>
+            <ItemDetail producto={getProds} add = {add}/>
         </div>
     )
 }
