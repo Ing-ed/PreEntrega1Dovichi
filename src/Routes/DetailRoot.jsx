@@ -11,7 +11,8 @@ let menu = ["uControladores","Placas de desarrollo","Servicios","Quienes somos?"
 let brand = "IngED - Electronics"
 
 
-function ItemRoot() {
+function DetailRoot() {
+  let {param} = useParams();
   let [getCant,setCant] = useState(0)
   let [getSelect,setSelect] = useState("Inicio")
 
@@ -29,10 +30,10 @@ function ItemRoot() {
   return (
     <>
       <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
-      <ItemListContainer add = {sumar} productos={productos}/>
-      {/* <ItemDetailContainer productos={productos} section = {getSelect}/> */}
+      <ItemDetailContainer productos={productos}/>
+      {/* <ItemListContainer section={useParams().category} add = {sumar} productos={productos}/> */}
     </>
   )
 }
 
-export default ItemRoot
+export default DetailRoot

@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import { ItemList } from "../ItemList";
+import { useParams } from 'react-router-dom'
 import "./estilo.css";
 
 
-export function ItemListContainer({productos,add,section}){
+export function ItemListContainer({productos,add}){
     let [getProds, setProds] = useState([])
+    let { ID } = useParams();
     let inicio = ""
     useEffect(() =>{
         let Productos = new Promise((resolve,reject) =>{
             setTimeout(() => resolve(productos),2000)
         })
         .then((resp) =>{
-            console.log(section,"Section")
-            if(Boolean(section)){
-                let r = productos.filter(item => item.category === section)
+            if(Boolean(ID)){
+                let r = productos.filter(item => item.category === ID)
                 setProds(r)
-                console.log(r,"R",section,"seccion")
             }
             else{
                 inicio = "Inicio"
@@ -25,7 +25,7 @@ export function ItemListContainer({productos,add,section}){
         // .then((resp) =>setProds(resp))
         .catch(console.log("ERROR"))
     console.log(getProds,"getProds")
-    },[section])
+    },[ID])
 
     console.log(getProds,"seccion")
     

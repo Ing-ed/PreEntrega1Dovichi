@@ -3,14 +3,13 @@
     width: 200px;
     height: 400px;
     background-color: #FFF;
-    /* border: 2px solid red; */
     border-radius: 20px;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding:1rem;
-    /* align-items: center; */
+    justify-content: space-between;
 }
 .item *{
     color:#232323;
@@ -20,4 +19,5 @@
 }
 .item img{
     width: 100%;
+    justify-self: center;
 }

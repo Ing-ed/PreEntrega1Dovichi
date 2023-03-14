@@ -14,7 +14,7 @@ export let productos =[
     {
         id:"2550",
         title:"Pic18F2550",
-        description:"lorem ipsum",
+        description:"lorem ipsum description",
         price:"2",
         picture:Pic,
         category:"uControladores"
@@ -22,7 +22,7 @@ export let productos =[
     {
         id:"32",
         title:"Esp32",
-        description:"lorem ipsum",
+        description:"lorem ipsum description",
         price:"2",
         picture:Esp,
         category:"uControladores"
@@ -36,33 +36,33 @@ export let productos =[
         category:"uControladores"
     },
     {
-        id:"1769",
+        id:"1769-dev",
         title:"LPC1769-dev",
-        description:"lorem ipsum",
+        description:"lorem ipsum description",
         price:"2",
         picture:lpcDev,
         category:"Placas de desarrollo"
     },
     {
-        id:"Esp32",
+        id:"32-dev",
         title:"Esp32-Dev",
-        description:"lorem ipsum",
+        description:"lorem ipsum description",
         price:"2",
         picture:esp32Dev,
         category:"Placas de desarrollo"
     },
     {
-        id:"Arduino",
+        id:"Arduino-dev",
         title:"Arduino uno",
-        description:"lorem ipsum",
+        description:"lorem ipsum description",
         price:"2",
-        picture:lpcDev,
+        picture:ArduinoDev,
         category:"Placas de desarrollo"
     },
     {
         id:"Diseños",
         title:"Diseños a medida",
-        description:"lorem ipsum",
+        description:"lorem ipsum description",
         price:"2",
         picture:"",
         category:"Servicios"

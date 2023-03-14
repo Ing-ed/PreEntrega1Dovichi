@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './Routes/Root'
 import ItemRoot from './Routes/itemRoot'
+import DetailRoot from './Routes/DetailRoot'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import './index.css'
-import { ItemDetailContainer } from './Components/itemDetailContainer'
 
 let router = createBrowserRouter([
   {
@@ -12,9 +12,13 @@ let router = createBrowserRouter([
     element: <Root />
   },
   {
-    path:"/:category",
+    path:"/category/:ID",
     element: <ItemRoot />
-  }
+  },
+  {
+    path:"/item/:ID",
+    element:<DetailRoot />
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

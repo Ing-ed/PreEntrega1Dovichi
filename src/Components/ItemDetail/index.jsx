@@ -3,7 +3,7 @@ import "./estilo.css"
 
 
 export function ItemDetail({producto}){
-    console.log(producto)
+    // console.log(producto)
     return(
         <div className="itemDetail">
             <ul>

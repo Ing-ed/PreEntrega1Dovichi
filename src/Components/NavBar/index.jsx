@@ -12,7 +12,7 @@ export function NavBar({nombre,menu,cant,select}){
     let arr = []
     menu.map(item=>{
         // arr.push(<li><button style={estilo.boton}>{item}</button></li>)
-        arr.push(<Link to ={`/${item}`}><li key={item}><button className="menu" onClick={() => select(item)}>{item}</button></li></Link>)
+        arr.push(<Link to ={`/category/${item}`}><li key={item}><button className="menu" onClick={() => select(item)}>{item}</button></li></Link>)
     })
     return(
         <nav >
