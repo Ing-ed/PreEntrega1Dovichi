@@ -1,7 +1,8 @@
 import { CartWidget} from "../CartWidget"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./estilo.css";
+import { CartContext } from "../../CartContext/CartContext";
 
 //menu es un array, lo que permite añadir elemnentos de manera mas sencilla
 //por cada elemento del array menu se crea una etiqueta button
@@ -9,6 +10,9 @@ import "./estilo.css";
 
 export function NavBar({nombre,menu,cant,select}){
     let [clicked, setClicked] = useState('');
+    let {cantidad} = useContext(CartContext)
+    console.log(useContext(CartContext),"context");
+    console.log(cantidad,"cantidad");
     let arr = []
     menu.map(item=>{
         // arr.push(<li><button style={estilo.boton}>{item}</button></li>)

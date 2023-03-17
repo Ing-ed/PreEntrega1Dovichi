@@ -2,10 +2,11 @@
 import { NavBar } from '../Components/NavBar'
 import { ItemListContainer } from '../Components/ItemListContainer'
 import { productos } from '../Mocks/productos'
-import { useState,useEffect } from 'react'
+import { useState,useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import './App.css'
 import { ItemDetailContainer } from '../Components/itemDetailContainer'
+import { CartContext } from '../CartContext/CartContext'
 
 let menu = ["uControladores","Placas de desarrollo","Servicios","Quienes somos?"]
 let brand = "IngED - Electronics"
@@ -25,12 +26,12 @@ function Root() {
   }
   
 
-  console.log(Boolean(useParams()),"param")
+  console.log(useContext(CartContext),"root")
   // console.log(getCant, "inicio")
   return (
     <>
-      <NavBar nombre = {brand} menu = {menu} cant = {getCant}/>
-      <ItemListContainer section={useParams().category} add = {sumar} productos={productos}/>
+        <NavBar nombre = {brand} menu = {menu} cant = {getCant}/>
+        <ItemListContainer section={useParams().category} add = {sumar} productos={productos}/>
       {/* <ItemDetailContainer productos={productos}/> */}
     </>
   )
