@@ -1,25 +1,16 @@
+import { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import Carrito from '../../assets/Carrito.png'
+import { CartContext } from '../../CartContext/CartContext'
+import "./estilo.css";
 export function CartWidget({cant}){
-    let estilo = {
-        boton:{
-            border:'none'
-        },
-        img:{
-            width:'50px',
-            borderRadius:'10px',
-            border:'none',
-            backgroundColor:'#FAFAFA'
-        },
-        contenedor:{
-            display:'flex',
-            gap:'10px',
-            color:'#FAFAFA'
-        }
-    }
+    let {producto} = useContext(CartContext);
     return(
-        <div style={estilo.contenedor}>
-            <button className='carrito' style={estilo.boton}><img style={estilo.img} src={Carrito}></img></button>
+        <Link to ="/Cart">
+        <div className='cartWidget'>
+            <img src={Carrito}/>
             <p>{cant}</p>
         </div>
+        </Link>
     )
 }

@@ -8,14 +8,12 @@ import { CartContext } from "../../CartContext/CartContext";
 //por cada elemento del array menu se crea una etiqueta button
 
 
-export function NavBar({nombre,menu,cant,select}){
+export function NavBar({nombre,menu,select}){
     let [clicked, setClicked] = useState('');
-    let {cantidad} = useContext(CartContext)
-    console.log(useContext(CartContext),"context");
-    console.log(cantidad,"cantidad");
+    let {cant} = useContext(CartContext)
+
     let arr = []
     menu.map(item=>{
-        // arr.push(<li><button style={estilo.boton}>{item}</button></li>)
         arr.push(<Link to ={`/category/${item}`}><li key={item}><button className="menu" onClick={() => select(item)}>{item}</button></li></Link>)
     })
     return(

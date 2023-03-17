@@ -18,18 +18,15 @@ function DetailRoot() {
 
   function sumar(cantidad){
     setCant(getCant + cantidad)
-    console.log(cantidad)
   }
   function select(sel){
     setSelect(sel)
   }
   
 
-  // console.log((useParams().category),"param")
-  // console.log(getCant, "inicio")
   return (
     <>
-      <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
+      <NavBar select = {select} nombre = {brand} menu = {menu}/>
       <ItemDetailContainer productos={productos} add = {sumar}/>
       {/* <ItemListContainer section={useParams().category} add = {sumar} productos={productos}/> */}
     </>

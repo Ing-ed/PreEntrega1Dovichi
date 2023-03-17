@@ -1,0 +1,18 @@
+.cartWidget{
+    width: 100px;
+    height: 70px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+}
+.cartWidget img{
+    width: 70%;
+    padding: 5px;
+    background-color: transparent;
+}
+.cartWidget p{
+    background-color: transparent;    
+    color:#252525;
+    font-weight: bolder;
+    padding-top: 10px;
+}

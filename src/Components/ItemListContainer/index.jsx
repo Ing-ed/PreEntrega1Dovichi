@@ -24,10 +24,8 @@ export function ItemListContainer({productos,add}){
         })
         // .then((resp) =>setProds(resp))
         .catch(console.log("ERROR"))
-    console.log(getProds,"getProds")
     },[ID])
 
-    console.log(getProds,"seccion")
     
     return(
         <div className="itemListCont">

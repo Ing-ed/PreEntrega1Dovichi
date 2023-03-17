@@ -11,7 +11,7 @@ export function ItemDetail({producto, add}){
                 <li key={`2 ${producto.id}`}><p>{producto.description}</p></li>
                 <li key={`3 ${producto.id}`}><img src={producto.picture}></img></li>
                 </div>
-            <Add add = {add} />
+            <Add />
         </ul>
     )
 }

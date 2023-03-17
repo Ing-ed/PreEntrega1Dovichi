@@ -9,7 +9,6 @@ import "./estilo.css"
 export function ItemDetailContainer({productos,add}){
     let [getProds,setProds] = useState([])
     const {ID} = useParams();
-    console.log(ID, "id")
 
     useEffect(() =>{
         let Productos = new Promise((resolve,reject) =>{

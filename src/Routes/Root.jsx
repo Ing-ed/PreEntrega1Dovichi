@@ -26,11 +26,10 @@ function Root() {
   }
   
 
-  console.log(useContext(CartContext),"root")
   // console.log(getCant, "inicio")
   return (
     <>
-        <NavBar nombre = {brand} menu = {menu} cant = {getCant}/>
+        <NavBar nombre = {brand} menu = {menu}/>
         <ItemListContainer section={useParams().category} add = {sumar} productos={productos}/>
       {/* <ItemDetailContainer productos={productos}/> */}
     </>

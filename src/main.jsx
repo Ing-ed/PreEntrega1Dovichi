@@ -4,9 +4,6 @@ import Root from './Routes/Root'
 import ItemRoot from './Routes/itemRoot'
 import DetailRoot from './Routes/DetailRoot'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
-import { NavBar } from './Components/NavBar'
-import { CartContext } from './CartContext/CartContext'
-import './index.css'
 import { CartProvider } from './CartContext/CartContext'
 
 

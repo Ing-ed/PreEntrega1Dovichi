@@ -28,7 +28,7 @@ function ItemRoot() {
   // console.log(getCant, "inicio")
   return (
     <>
-      <NavBar select = {select} nombre = {brand} menu = {menu} cant = {getCant}/>
+      <NavBar select = {select} nombre = {brand} menu = {menu}/>
       <ItemListContainer add = {sumar} productos={productos}/>
       {/* <ItemDetailContainer productos={productos} section = {getSelect}/> */}
     </>

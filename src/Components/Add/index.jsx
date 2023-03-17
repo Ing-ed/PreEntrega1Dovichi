@@ -1,15 +1,16 @@
 import "./estilo.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../CartContext/CartContext";
 
-export function Add({add}){
+export function Add({}){
     let [getCant, setCant] = useState(1)
+    let {add} = useContext(CartContext)
+    // console.log(add);
+
+
     function changeHandler(event){
         setCant(event.target.value)
-        // console.log(event.target.value)
     }
-    
-
-
 
     return(
         <div>
