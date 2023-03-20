@@ -13,9 +13,21 @@ export function CartProvider({children}){
         setProd([...getProd,producto]);
 
     }
+    
+    function Borrar(index){
+        console.log("index",index)
+        prod = getProd;
+        if(+prod[index].cant > 1){
+            +prod[index].cant--;
+        } else {
+            prod.splice(index,1);
+        }
+        console.log(prod)
+        setProd(prod);
+    }
 
     return(
-        <CartContext.Provider value = {{cant:getCant,add:onAdd,list:getProd}}>
+        <CartContext.Provider value = {{cant:getCant,add:onAdd,list:getProd, Borrar :Borrar}}>
             {children}
         </CartContext.Provider>
     )

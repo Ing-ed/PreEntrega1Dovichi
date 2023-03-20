@@ -13,8 +13,8 @@ export function NavBar({nombre,menu,select}){
     let {cant} = useContext(CartContext)
 
     let arr = []
-    menu.map(item=>{
-        arr.push(<Link to ={`/category/${item}`}><li key={item}><button className="menu" onClick={() => select(item)}>{item}</button></li></Link>)
+    menu.map((item,index)=>{
+        arr.push(<Link to ={`/category/${item}`}><li key={`${index}${item}`}><button className="menu" onClick={() => select(item)}>{item}</button></li></Link>)
     })
     return(
         <nav >
