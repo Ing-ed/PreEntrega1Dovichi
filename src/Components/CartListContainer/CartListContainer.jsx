@@ -9,10 +9,6 @@ export function CartListContainer(){
     let [getArr,setArr] = useState([])
     let arr = []
 
-    function Remove(index){
-        setArr(getArr.splice(index,1))
-    }
-    
     useEffect(() => {
         list.map((item, index) => {
             arr.push(
@@ -22,12 +18,12 @@ export function CartListContainer(){
                 <li key={`3 ${item.id}`}><p>{item.description}</p></li>
                 <li key = {`4 ${item.id}`}><p>${+item.price*+item.cant}</p></li>
                 <li className="img" key={`5 ${item.id}`}><img src={item.picture}></img></li>
-                <li className="cerrar"><button onClick = {()=>Remove(index)}>Cerrar</button></li>
+                <li className="cerrar"><button onClick = {()=>Borrar(index)}>Cerrar</button></li>
             </ul>
             )
         })
         setArr(arr)
-    },[])
+    },[getArr])
     
 
     return(
