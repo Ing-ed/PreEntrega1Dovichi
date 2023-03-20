@@ -6,7 +6,7 @@ import "./estilo.css";
 export function CartWidget({cant}){
     let {producto} = useContext(CartContext);
     return(
-        <Link to ="/Cart">
+        <Link to ="/Cart/list">
         <div className='cartWidget'>
             <img src={Carrito}/>
             <p>{cant}</p>

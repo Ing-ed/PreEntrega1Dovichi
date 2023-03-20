@@ -15,7 +15,7 @@ export function CartProvider({children}){
     }
 
     return(
-        <CartContext.Provider value = {{cant:getCant,add:onAdd,producto:getProd}}>
+        <CartContext.Provider value = {{cant:getCant,add:onAdd,list:getProd}}>
             {children}
         </CartContext.Provider>
     )

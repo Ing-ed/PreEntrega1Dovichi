@@ -13,13 +13,13 @@ let router = createBrowserRouter([
     element: <Root />
   },
   {
-    path:"/category/:ID",
-    element: <ItemRoot />
+    path:"/:categories/:ID",
+    element: <Root />
   },
-  {
-    path:"/item/:ID",
-    element:<DetailRoot />
-  },
+  // {
+  //   path:"/item/:ID",
+  //   element:<DetailRoot />
+  // },
   
 ])
 
