@@ -15,15 +15,15 @@ export function CartProvider({children}){
     }
     
     function Borrar(index){
-        console.log("index",index)
         prod = getProd;
+        setCant(getCant - 1);
         if(+prod[index].cant > 1){
             +prod[index].cant--;
         } else {
             prod.splice(index,1);
         }
-        console.log(prod)
         setProd(prod);
+        console.log(prod)
     }
 
     return(
