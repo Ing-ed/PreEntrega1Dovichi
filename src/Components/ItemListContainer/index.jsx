@@ -23,7 +23,8 @@ export function ItemListContainer({productos,add}){
             }
         })
         // .then((resp) =>setProds(resp))
-        .catch(console.log("ERROR"))
+        // .catch(console.log("ERROR"))
+        .catch()
     },[ID])
 
     

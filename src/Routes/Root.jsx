@@ -16,7 +16,6 @@ function Root() {
   // const {param} = useParams();
   let [getCant,setCant] = useState(0)
   let { categories } = useParams();
-  console.log(categories,"r0ot")
   let uno = "false";
   // let [getSelect,setSelect] = useState("Inicio")
  
