@@ -1,38 +1,36 @@
 // import { useState } from 'react'
 import { NavBar } from '../Components/NavBar'
 import { ItemListContainer } from '../Components/ItemListContainer'
-import { productos } from '../Mocks/productos'
+// import { productos } from '../Mocks/productos'
 import { useState,useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { ItemDetailContainer } from '../Components/itemDetailContainer'
 import { CartListContainer } from '../Components/CartListContainer/CartListContainer'
+import { initializeApp } from "firebase/app";
 import './App.css'
 
-let menu = ["uControladores","Placas de desarrollo","Servicios","Quienes somos?"]
+let menu = ["uControladores","Placas de desarrollo"]
 let brand = "IngED - Electronics"
 
 
 function Root() {
-  // const {param} = useParams();
   let [getCant,setCant] = useState(0)
   let { categories } = useParams();
-  // console.log(categories,"r0ot")
+  console.log(categories,"cats")
   let uno = "false";
-  // let [getSelect,setSelect] = useState("Inicio")
  
-
+  let rutas = {
+    undefined:<ItemListContainer/>,
+    uControladores: <ItemListContainer seccion={"uControladores"}/>,
+    Placasdedesarrollo: <ItemListContainer seccion={"Placasdedesarrollo"}/>,
+    item:<ItemDetailContainer/>,
+    Cart: <CartListContainer/>
+  }
   // console.log(getCant, "inicio")
   return (
     <>
     <NavBar nombre = {brand} menu = {menu}/>
-      {categories === undefined
-        ?<ItemListContainer  productos={productos}/>      
-        : categories === "item"
-          ?<ItemDetailContainer productos={productos}/>
-          : categories === "Cart"
-            ? <CartListContainer/>
-            :<ItemListContainer section={categories.category} productos={productos}/>
-      }
+    {rutas[categories]}
     </>
   )
 }

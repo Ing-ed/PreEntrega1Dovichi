@@ -16,7 +16,7 @@ export function CartListContainer(){
                 ?<h1>No hay elementos en el carrito</h1>
                 :list.map((item,index) =>{
                         return(
-                        <ul className="itemCart">
+                        <ul key={`ul${item.id}`} className="itemCart">
                             <li key={`1 ${item.id}`}><p>{item.cant}</p></li>
                             <li key={`2 ${item.id}`}><p>{item.title}</p></li>
                             <li key={`3 ${item.id}`}><p>{item.description}</p></li>

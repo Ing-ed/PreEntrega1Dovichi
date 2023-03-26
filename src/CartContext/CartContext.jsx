@@ -10,8 +10,8 @@ export function CartProvider({children}){
     let prod = [];
 
     function onAdd(cantidad,producto){
-        setCant(getCant + cantidad);7
-        setTot(+cantidad*(+producto.price));
+        setCant(getCant + cantidad);
+        setTot(getTot + +cantidad*(+producto.price));
         console.log("total",getTot)
         producto.cant = cantidad;
         // setProd([...getProd,producto]);
@@ -27,7 +27,7 @@ export function CartProvider({children}){
     function Borrar(index){
         setCant(getCant -1)
         prod = getProd;
-        setCant(getCant - 1);
+        setTot(getTot - +prod[index].price)
         if(+prod[index].cant > 1){
             +prod[index].cant--;
         } else {
