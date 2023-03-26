@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Item } from "../Components/Item";
 
 export let CartContext = createContext();
@@ -30,12 +30,21 @@ export function CartProvider({children}){
         setTot(getTot - +prod[index].price)
         if(+prod[index].cant > 1){
             +prod[index].cant--;
+            setTot(getTot - (+prod[index].price));
         } else {
+            setTot(getTot - (+prod[index].price));
             prod.splice(index,1);
         }
         setProd(prod);
         console.log(prod)
     }
+    // useEffect(() =>{
+    //     let tot = 0
+    //     getProd.map((item) =>{
+    //         tot + (+item.price)*(+item.cant);
+    //    })
+    //    setTot(tot);
+    // },[getCant])
 
     return(
         <CartContext.Provider value = {{cant:getCant,add:onAdd,list:getProd, Borrar :Borrar, total : getTot}}>

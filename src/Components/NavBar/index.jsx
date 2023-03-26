@@ -1,5 +1,5 @@
 import { CartWidget} from "../CartWidget"
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import { Link } from "react-router-dom";
 import "./estilo.css";
 import { CartContext } from "../../CartContext/CartContext";
@@ -9,7 +9,6 @@ import { CartContext } from "../../CartContext/CartContext";
 
 
 export function NavBar({nombre,menu,select}){
-    let [clicked, setClicked] = useState('');
     let {cant} = useContext(CartContext)
 
     let arr = []
