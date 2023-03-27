@@ -28,8 +28,12 @@ export function CartListContainer(){
                 })            
             }
             <div className="Total">
-                <h3>TOTAL:</h3>
-                <h3>{total}</h3>
+                <div className="info">
+                    <h3>TOTAL:</h3>
+                    <h3>${total}</h3>
+                </div>
+                {cant > 0 && <button>Terminar compra</button>}
+                
             </div>
         </div>
     )
