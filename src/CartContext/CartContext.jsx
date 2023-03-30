@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { doc, updateDoc, addDoc, collection, getFirestore } from "firebase/firestore";
 import { Item } from "../Components/Item";
 
 export let CartContext = createContext();
@@ -8,6 +9,9 @@ export function CartProvider({children}){
     let [getProd,setProd] = useState([]);
     let [getTot, setTot] = useState(0);
     let prod = [];
+
+    let db = getFirestore();
+    let orders = collection(db,"orders")
 
     function onAdd(cantidad,producto){
         setCant(getCant + cantidad);
@@ -38,6 +42,28 @@ export function CartProvider({children}){
         setProd(prod);
         console.log(prod)
     }
+    function ResetCart(){
+        setProd([]);
+        setCant(0);
+        setTot(0);
+    }
+    function FinishBuy(){
+        let order = {
+            buyer:{
+                name:"Pepe",
+                phone:"000-0000000000",
+                email:"pepe@example.com"
+            },
+            items:getProd.map((item,index) => {return({id:item.id,title:item.title,cant:item.cant})}),
+            // items:getProd,
+            total:getTot
+        }
+        console.log(order);
+        addDoc(orders,order)
+        .then((res) =>{
+            ResetCart();
+        })
+    }
     // useEffect(() =>{
     //     let tot = 0
     //     getProd.map((item) =>{
@@ -47,7 +73,12 @@ export function CartProvider({children}){
     // },[getCant])
 
     return(
-        <CartContext.Provider value = {{cant:getCant,add:onAdd,list:getProd, Borrar :Borrar, total : getTot}}>
+        <CartContext.Provider value = {{cant:getCant,
+                                        add:onAdd,
+                                        list:getProd, Borrar :Borrar, 
+                                        total : getTot, 
+                                        Finish: FinishBuy,
+                                        Reset:ResetCart}}>
             {children}
         </CartContext.Provider>
     )

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./estilo.css"
 
 export function CartListContainer(){
-    let { list, Borrar, cant, total } = useContext(CartContext)
+    let { list, Borrar, cant, total, Finish, Reset } = useContext(CartContext)
     // let [lista, setLista] = useState(list);
     let [getArr,setArr] = useState([])
     console.log(cant)    
@@ -32,7 +32,10 @@ export function CartListContainer(){
                     <h3>TOTAL:</h3>
                     <h3>${total}</h3>
                 </div>
-                {cant > 0 && <button>Terminar compra</button>}
+                {cant > 0 && <>
+                <button onClick={Finish}>Terminar compra</button>
+                <button onClick={Reset}>Limpiar Carrito</button>
+                </>}
                 
             </div>
         </div>
