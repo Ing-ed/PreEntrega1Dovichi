@@ -17,17 +17,22 @@ export function CartProvider({children}){
         setCant(getCant + cantidad);
         setTot(getTot + +cantidad*(+producto.price));
         console.log("total",getTot)
-        producto.cant = cantidad;
-        // setProds([...getProds,producto]);
         let index = getProds.indexOf(producto)
         if(index >= 0){
             getProds[index].cant += cantidad;
             console.log(getProds[index])
         } else {
+            producto.cant = +cantidad;
             setProds([...getProds,producto]);
         }
     }
-    
+    function Delete(index){
+        prod = getProds;
+        setCant(getCant - +prod[index].cant)
+        setTot(getTot - +prod[index].price* +prod[index].cant)
+        prod.splice(index,1);
+        setProds(prod);
+    }
     function Borrar(index){
         setCant(getCant -1)
         prod = getProds;
@@ -85,7 +90,9 @@ export function CartProvider({children}){
     return(
         <CartContext.Provider value = {{cant:getCant,
                                         add:onAdd,
-                                        list:getProds, Borrar :Borrar, 
+                                        list:getProds,
+                                        Borrar :Borrar,
+                                        Delete:Delete,
                                         total : getTot, 
                                         Finish: FinishBuy,
                                         Reset:ResetCart}}>
