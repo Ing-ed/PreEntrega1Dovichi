@@ -1,26 +1,26 @@
 {
     "1":{
-        "id":"2550",
         "title":"Pic18F2550",
         "description":"lorem ipsum description",
         "price":"2",
         "picture":"https://www.semak.com.ar/Image/0/450_450-PIC18F2550-SPDIP-28.png",
-        "category":"uControladores"
+        "category":"uControladores",
+        "stock": 10
     },
     "2":{
-        "id":"32",
         "title":"Esp32",
         "description":"lorem ipsum description",
         "price":"2",
         "picture":"https://ar.mouser.com/images/marketingid/2018/img/199600425.png?v=100522.0945",
-        "category":"uControladores"
+        "category":"uControladores",
+        "stock": 10
     },
     "3":{
-        "id":"Uno",
         "title":"Arduino uno",
         "description":"lorem ipsum description",
         "price":"2",
         "picture":"https://ar.mouser.com/images/marketingid/2018/img/137015602.png?v=102422.0419",
-        "category":"placasDesarrollo"
+        "category":"placasDesarrollo",
+        "stock": 10
     }
 }
