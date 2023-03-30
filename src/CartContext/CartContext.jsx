@@ -6,7 +6,7 @@ export let CartContext = createContext();
 
 export function CartProvider({children}){
     let [getCant,setCant] = useState(0);
-    let [getProd,setProd] = useState([]);
+    let [getProds,setProds] = useState([]);
     let [getTot, setTot] = useState(0);
     let prod = [];
 
@@ -18,19 +18,19 @@ export function CartProvider({children}){
         setTot(getTot + +cantidad*(+producto.price));
         console.log("total",getTot)
         producto.cant = cantidad;
-        // setProd([...getProd,producto]);
-        let index = getProd.indexOf(producto)
+        // setProds([...getProds,producto]);
+        let index = getProds.indexOf(producto)
         if(index >= 0){
-            getProd[index].cant += cantidad;
-            console.log(getProd[index])
+            getProds[index].cant += cantidad;
+            console.log(getProds[index])
         } else {
-            setProd([...getProd,producto]);
+            setProds([...getProds,producto]);
         }
     }
     
     function Borrar(index){
         setCant(getCant -1)
-        prod = getProd;
+        prod = getProds;
         setTot(getTot - +prod[index].price)
         if(+prod[index].cant > 1){
             +prod[index].cant--;
@@ -39,11 +39,11 @@ export function CartProvider({children}){
             setTot(getTot - (+prod[index].price));
             prod.splice(index,1);
         }
-        setProd(prod);
+        setProds(prod);
         console.log(prod)
     }
     function ResetCart(){
-        setProd([]);
+        setProds([]);
         setCant(0);
         setTot(0);
     }
@@ -54,11 +54,21 @@ export function CartProvider({children}){
                 phone:"000-0000000000",
                 email:"pepe@example.com"
             },
-            items:getProd.map((item,index) => {return({id:item.id,title:item.title,cant:item.cant})}),
+            items:getProds.map((item,index) => {return({id:item.id,title:item.title,cant:item.cant})}),
             // items:getProd,
             total:getTot
         }
-        console.log(order);
+        getProds.map((item) => {
+            if(item.stock < item.cant){
+                console.log("no se pudo hacer la compra, no hay stock")
+                return
+            }
+            let ref = doc(db,"items",item.id);
+            updateDoc(ref,{stock:(+item.stock - +item.cant)})
+            .then((res) => console.log("res",res))
+            .catch((err) => console.log(err))
+        })
+        // console.log(order);
         addDoc(orders,order)
         .then((res) =>{
             ResetCart();
@@ -75,7 +85,7 @@ export function CartProvider({children}){
     return(
         <CartContext.Provider value = {{cant:getCant,
                                         add:onAdd,
-                                        list:getProd, Borrar :Borrar, 
+                                        list:getProds, Borrar :Borrar, 
                                         total : getTot, 
                                         Finish: FinishBuy,
                                         Reset:ResetCart}}>
