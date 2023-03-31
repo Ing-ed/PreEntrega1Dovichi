@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 import { useEffect, useState } from "react";
 import "./estilo.css"
+import { AddSub } from "../AddSub";
 
 export function CartListContainer(){
-    let {Delete, list, Borrar, cant, add,total, Finish, Reset } = useContext(CartContext)
+    let {Delete, list, Borrar, cant, Add,total, Finish, Reset } = useContext(CartContext)
     // let [lista, setLista] = useState(list);
     let [getArr,setArr] = useState([])
     console.log(cant)    
@@ -21,10 +22,10 @@ export function CartListContainer(){
                             <li key={`2 ${item.id}`}><p>{item.title}</p></li>
                             <li key={`3 ${item.id}`}><p>{item.description}</p></li>
                             <li key = {`4 ${item.id}`}><p>${+item.price*+item.cant}</p></li>
-                            <li ><button onClick = {()=>-add(1,item)}>+1</button></li>
+                            <li ><button onClick = {()=>-Add(1,item)}>+1</button></li>
                             <li ><button onClick = {()=>-Borrar(index)}>-1</button></li>
                             <li className="img" key={`5 ${item.id}`}><img src={item.picture}></img></li>
-                            <li className="cerrar"><button onClick = {()=>Delete(index)}>Limpiar</button></li>
+                            <li className="cerrar"><button onClick = {()=>Delete(index)}>Quitar</button></li>
                         </ul>
                     )
                 })            

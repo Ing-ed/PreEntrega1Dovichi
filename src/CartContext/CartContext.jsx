@@ -88,17 +88,10 @@ export function CartProvider({children}){
             ResetCart();
         })
     }
-    // useEffect(() =>{
-    //     let tot = 0
-    //     getProd.map((item) =>{
-    //         tot + (+item.price)*(+item.cant);
-    //    })
-    //    setTot(tot);
-    // },[getCant])
 
     return(
         <CartContext.Provider value = {{cant:getCant,
-                                        add:onAdd,
+                                        Add:onAdd,
                                         list:getProds,
                                         Borrar :Borrar,
                                         Delete:Delete,

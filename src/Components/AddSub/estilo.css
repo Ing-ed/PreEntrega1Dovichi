@@ -1,0 +1,11 @@
+.AddSub{
+    width: 80%;
+    border:1px solid red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    margin:auto;
+}

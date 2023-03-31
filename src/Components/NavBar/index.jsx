@@ -13,7 +13,7 @@ export function NavBar({nombre,menu,select}){
 
     let arr = []
     menu.map((item,index)=>{
-        arr.push(<Link key={`${index}${item}`} to ={`/${item.replace(/\s/g,"")}/catalog`}><li ><button className="menu" onClick={() => select(item)}>{item}</button></li></Link>)
+        arr.push(<Link key={`${index}${item}`} to ={`/${item.replace(/\s/g,"")}/catalog`}><li ><button className="menu">{item}</button></li></Link>)
     })
     return(
         <nav >

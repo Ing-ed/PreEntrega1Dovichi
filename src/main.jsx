@@ -7,6 +7,7 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import { CartProvider } from './CartContext/CartContext'
 import { initializeApp } from 'firebase/app'
 
+// console.log(process.env.REACT_APP_apiKey)
 
 let router = createBrowserRouter([
   {
@@ -26,12 +27,12 @@ let router = createBrowserRouter([
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCJt0AThhP18AvI2OglP1kVZWVmZEjBlC4",
-  authDomain: "ecomercerjs.firebaseapp.com",
-  projectId: "ecomercerjs",
-  storageBucket: "ecomercerjs.appspot.com",
-  messagingSenderId: "782492432867",
-  appId: "1:782492432867:web:5c73744b078b0b1b2ec8d6"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId ,
+  appId: process.env.appId
 };
 
 initializeApp(firebaseConfig);
