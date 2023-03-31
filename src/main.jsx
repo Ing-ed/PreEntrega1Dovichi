@@ -1,3 +1,4 @@
+
 import React, { createContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './Routes/Root'
@@ -27,12 +28,12 @@ let router = createBrowserRouter([
 
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId ,
-  appId: process.env.appId
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGEING_SENDER_ID ,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 initializeApp(firebaseConfig);
