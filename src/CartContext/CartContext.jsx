@@ -18,6 +18,7 @@ export function CartProvider({children}){
         setTot(getTot + +cantidad*(+producto.price));
         console.log("total",getTot)
         let index = getProds.indexOf(producto)
+        console.log("indexProd",index,getProds,producto)
         if(index >= 0){
             getProds[index].cant += cantidad;
             console.log(getProds[index])
