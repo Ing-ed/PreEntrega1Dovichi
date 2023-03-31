@@ -1,4 +1,4 @@
-
+// require('dotenv').config();
 import React, { createContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './Routes/Root'
@@ -8,7 +8,6 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import { CartProvider } from './CartContext/CartContext'
 import { initializeApp } from 'firebase/app'
 
-// console.log(process.env.REACT_APP_apiKey)
 
 let router = createBrowserRouter([
   {
@@ -28,14 +27,15 @@ let router = createBrowserRouter([
 
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTHDOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGEING_SENDER_ID ,
-  appId: process.env.REACT_APP_APP_ID
+  apiKey: import.meta.env.REACT_APP_API_KEY,
+  authDomain: import.meta.env.REACT_APP_AUTHDOMAIN,
+  projectId: import.meta.env.REACT_APP_PROJECT_ID,
+  storageBucket: import.meta.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.REACT_APP_MESSAGEING_SENDER_ID ,
+  appId: import.meta.env.REACT_APP_APP_ID
 };
 
+console.log(import.meta.env.REACT_APP_API_KEY,"Console")
 initializeApp(firebaseConfig);
 
 
