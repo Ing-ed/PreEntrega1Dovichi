@@ -25,17 +25,26 @@ let router = createBrowserRouter([
   
 ])
 
-
+// solo para debug
 const firebaseConfig = {
-  apiKey: import.meta.env.REACT_APP_API_KEY,
-  authDomain: import.meta.env.REACT_APP_AUTHDOMAIN,
-  projectId: import.meta.env.REACT_APP_PROJECT_ID,
-  storageBucket: import.meta.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.REACT_APP_MESSAGEING_SENDER_ID ,
-  appId: import.meta.env.REACT_APP_APP_ID
+  apiKey: "AIzaSyCJt0AThhP18AvI2OglP1kVZWVmZEjBlC4",
+  authDomain: "ecomercerjs.firebaseapp.com",
+  projectId: "ecomercerjs",
+  storageBucket: "ecomercerjs.appspot.com",
+  messagingSenderId: "782492432867",
+  appId: "1:782492432867:web:5c73744b078b0b1b2ec8d6"
 };
 
-console.log(import.meta.env.REACT_APP_API_KEY,"Console")
+// const firebaseConfig = {
+//   apiKey:import.meta.env.REACT_APP_API_KEY,
+//   authDomain:import.meta.env.REACT_APP_AUTHDOMAIN,
+//   projectId:import.meta.env.REACT_APP_PROJECT_ID,
+//   storageBucket:import.meta.env.REACT_APP_STORAGE_BUCKET,
+//   messagingSenderId:import.meta.env.REACT_APP_MESSAGEING_SENDER_ID ,
+//   appId:import.meta.env.REACT_APP_APP_ID
+// };
+
+// console.log(import.meta.env.REACT_KEY,"Console")
 initializeApp(firebaseConfig);
 
 
