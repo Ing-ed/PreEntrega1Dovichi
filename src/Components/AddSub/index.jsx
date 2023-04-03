@@ -17,10 +17,10 @@ export function AddSub({producto,maxCant}){
 
     return(
         <div className="AddSub">
-            <button className="Button" onClick={() => add()}>+</button>
+            <button className="Button+" onClick={() => add()}>+</button>
             <span className="Cantidad">{getCant}</span>
-            <button className="Button" onClick={() => sub()}>-</button><br></br>
-            <button onClick={() => Add(Number(getCant),producto)}>Agregar a carrito</button>
+            <button className="Button-" onClick={() => sub()}>-</button><br></br>
+            <button className="Agregar" onClick={() => Add(Number(getCant),producto)}>Agregar a carrito</button>
         </div>
     )
 }
