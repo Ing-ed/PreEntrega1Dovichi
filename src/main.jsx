@@ -26,6 +26,7 @@ let router = createBrowserRouter([
 ])
 
 // solo para debug
+// solo para debug
 const firebaseConfig = {
   apiKey: "AIzaSyCJt0AThhP18AvI2OglP1kVZWVmZEjBlC4",
   authDomain: "ecomercerjs.firebaseapp.com",
@@ -33,7 +34,7 @@ const firebaseConfig = {
   storageBucket: "ecomercerjs.appspot.com",
   messagingSenderId: "782492432867",
   appId: "1:782492432867:web:5c73744b078b0b1b2ec8d6"
-};
+}
 
 // const firebaseConfig = {
 //   apiKey:import.meta.env.REACT_APP_API_KEY,
