@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { doc, updateDoc, addDoc, collection, getFirestore } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 import { Item } from "../Components/Item";
 
 export let CartContext = createContext();
@@ -8,6 +9,11 @@ export function CartProvider({children}){
     let [getCant,setCant] = useState(0);
     let [getProds,setProds] = useState([]);
     let [getTot, setTot] = useState(0);
+    let [getModal, setModal] = useState(0);
+    let { categories } = useParams();
+
+    // useEffect(() => {
+
     let prod = [];
 
     let db = getFirestore();
@@ -24,7 +30,6 @@ export function CartProvider({children}){
                 index = indx;
             }
         })
-        // console.log(indice,"index")
         console.log("productos",getProds);
         console.log("prod",producto)
         if(index >= 0){
@@ -61,12 +66,19 @@ export function CartProvider({children}){
         setCant(0);
         setTot(0);
     }
-    function FinishBuy(){
+    function HabForm(){
+        setModal(1);
+    }
+    function desForm(){
+        setModal(0);
+    }
+    function FinishBuy({Name,Lastname,Phone,Email,}){
         let order = {
             buyer:{
-                name:"Pepe",
-                phone:"000-0000000000",
-                email:"pepe@example.com"
+                name:Name,
+                lastname:Lastname,
+                phone:Phone,
+                email:Email
             },
             items:getProds.map((item,index) => {return({id:item.id,title:item.title,cant:item.cant})}),
             // items:getProd,
@@ -87,6 +99,7 @@ export function CartProvider({children}){
         .then((res) =>{
             ResetCart();
         })
+        setModal(0);
     }
 
     return(
@@ -97,7 +110,10 @@ export function CartProvider({children}){
                                         Delete:Delete,
                                         total : getTot, 
                                         Finish: FinishBuy,
-                                        Reset:ResetCart}}>
+                                        Reset:ResetCart,
+                                        HabForm:HabForm,
+                                        desForm,desForm,
+                                        showModal:getModal}}>
             {children}
         </CartContext.Provider>
     )

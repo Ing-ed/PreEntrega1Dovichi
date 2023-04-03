@@ -44,7 +44,6 @@ const firebaseConfig = {
 //   appId:import.meta.env.REACT_APP_APP_ID
 // };
 
-// console.log(import.meta.env.REACT_KEY,"Console")
 initializeApp(firebaseConfig);
 
 

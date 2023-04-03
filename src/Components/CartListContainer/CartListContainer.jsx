@@ -5,7 +5,7 @@ import "./estilo.css"
 import { AddSub } from "../AddSub";
 
 export function CartListContainer(){
-    let {Delete, list, Borrar, cant, Add,total, Finish, Reset } = useContext(CartContext)
+    let {Delete, list, Borrar, cant, Add,total, Finish, Reset, HabForm } = useContext(CartContext)
     // let [lista, setLista] = useState(list);
     let [getArr,setArr] = useState([])
     console.log(cant)    
@@ -38,7 +38,7 @@ export function CartListContainer(){
                     <h3>${total}</h3>
                 </div>
                 {cant > 0 && <>
-                <button onClick={Finish}>Terminar compra</button>
+                <button onClick={HabForm}>Terminar compra</button>
                 <button onClick={Reset}>Limpiar Carrito</button>
                 </>}
                 

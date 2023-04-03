@@ -8,17 +8,25 @@ import { ItemDetailContainer } from '../Components/itemDetailContainer'
 import { CartListContainer } from '../Components/CartListContainer/CartListContainer'
 import { initializeApp } from "firebase/app";
 import './App.css'
+import { BuyerData } from '../Components/BuyerData'
+import { CartContext } from '../CartContext/CartContext'
 
 let menu = ["uControladores","Placas de desarrollo"]
 let brand = "IngED - Electronics"
 
+// console.log(process.env.REACT_APP_API_KEY,"Console")
 
 function Root() {
   let [getCant,setCant] = useState(0)
   let { categories } = useParams();
+  let { desForm } = useContext(CartContext)
   console.log(categories,"cats")
   let uno = "false";
  
+  useEffect(() =>{
+    desForm()
+  },[categories])
+
   let rutas = {
     undefined:<ItemListContainer/>,
     uControladores: <ItemListContainer seccion={"uControladores"}/>,
@@ -31,6 +39,7 @@ function Root() {
     <>
     <NavBar nombre = {brand} menu = {menu}/>
     {rutas[categories]}
+    <BuyerData/>
     </>
   )
 }
