@@ -17,15 +17,15 @@ function ItemRoot() {
 
   function sumar(cantidad){
     setCant(getCant + cantidad)
-    // console.log(cantidad)
+    // //console.log(cantidad)
   }
   function select(sel){
     setSelect(sel)
   }
   
 
-  // console.log((useParams().category),"param")
-  // console.log(getCant, "inicio")
+  // //console.log((useParams().category),"param")
+  // //console.log(getCant, "inicio")
   return (
     <>
       <NavBar select = {select} nombre = {brand} menu = {menu}/>

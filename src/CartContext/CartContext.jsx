@@ -9,7 +9,7 @@ export function CartProvider({children}){
     let [getCant,setCant] = useState(0);
     let [getProds,setProds] = useState([]);
     let [getTot, setTot] = useState(0);
-    let [getModal, setModal] = useState(0);
+    let [getModal, setModal] = useState(2);
     let { categories } = useParams();
 
     // useEffect(() => {
@@ -22,7 +22,7 @@ export function CartProvider({children}){
     function onAdd(cantidad,producto){
         setCant(getCant + cantidad);
         setTot(getTot + +cantidad*(+producto.price));
-        console.log("total",getTot)
+        //console.log("total",getTot)
         let id = producto.id;
         let index = -1
         getProds.map((item,indx) => {
@@ -30,11 +30,11 @@ export function CartProvider({children}){
                 index = indx;
             }
         })
-        console.log("productos",getProds);
-        console.log("prod",producto)
+        //console.log("productos",getProds);
+        //console.log("prod",producto)
         if(index >= 0){
             getProds[index].cant += cantidad;
-            console.log(getProds[index])
+            //console.log(getProds[index])
         } else {
             producto.cant = +cantidad;
             setProds([...getProds,producto]);
@@ -59,7 +59,7 @@ export function CartProvider({children}){
             prod.splice(index,1);
         }
         setProds(prod);
-        console.log(prod)
+        //console.log(prod)
     }
     function ResetCart(){
         setProds([]);
@@ -86,20 +86,30 @@ export function CartProvider({children}){
         }
         getProds.map((item) => {
             if(item.stock < item.cant){
-                console.log("no se pudo hacer la compra, no hay stock")
+                //console.log("no se pudo hacer la compra, no hay stock")
                 return
             }
             let ref = doc(db,"items",item.id);
             updateDoc(ref,{stock:(+item.stock - +item.cant)})
             .then((res) => console.log("res",res))
-            .catch((err) => console.log(err))
+            .catch((err) =>console.log(err))
         })
-        // console.log(order);
+        // //console.log(order);
         addDoc(orders,order)
         .then((res) =>{
-            ResetCart();
+            setModal(2)
+            setTimeout(() =>{
+                ResetCart();
+                setModal(0);
+            },2000);
         })
-        setModal(0);
+        .catch((err) =>{
+            setModal(3)
+            setTimeout(() =>{
+                // ResetCart();
+                setModal(0);
+            },2000);
+        })
     }
 
     return(

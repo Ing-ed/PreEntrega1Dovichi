@@ -20,7 +20,7 @@ export function ItemDetail({producto}){
     }
     let db = getFirestore();
     let ref = doc(db,"items",ID);
-    console.log(ref);
+    //console.log(ref);
     useEffect(() => {
         getDoc(ref).then((snapshot) =>{
             if(snapshot.exists()){
@@ -28,7 +28,7 @@ export function ItemDetail({producto}){
             }
         })
     },[])
-    // console.log(producto)
+    // //console.log(producto)
     return(
         <ul className="item">
             {getProd === undefined

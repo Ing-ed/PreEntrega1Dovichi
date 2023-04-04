@@ -18,7 +18,7 @@ export function ItemDetailContainer(){
             setProds(snapshot.docs.map((doc) => ({id:doc.id,...doc.data()})))
         })
     },[ID])
-    console.log(getProds[0])
+    //console.log(getProds[0])
 
     return(
         <div className="itemListCont">

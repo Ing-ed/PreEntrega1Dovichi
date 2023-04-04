@@ -14,13 +14,13 @@ import { CartContext } from '../CartContext/CartContext'
 let menu = ["uControladores","Placas de desarrollo"]
 let brand = "IngED - Electronics"
 
-// console.log(process.env.REACT_APP_API_KEY,"Console")
+// //console.log(process.env.REACT_APP_API_KEY,"Console")
 
 function Root() {
   let [getCant,setCant] = useState(0)
   let { categories } = useParams();
   let { desForm } = useContext(CartContext)
-  console.log(categories,"cats")
+  //console.log(categories,"cats")
   let uno = "false";
  
   useEffect(() =>{
@@ -34,7 +34,7 @@ function Root() {
     item:<ItemDetailContainer/>,
     Cart: <CartListContainer/>
   }
-  // console.log(getCant, "inicio")
+  // //console.log(getCant, "inicio")
   return (
     <>
     <NavBar nombre = {brand} menu = {menu}/>

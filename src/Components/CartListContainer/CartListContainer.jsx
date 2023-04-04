@@ -8,7 +8,7 @@ export function CartListContainer(){
     let {Delete, list, Borrar, cant, Add,total, Finish, Reset, HabForm } = useContext(CartContext)
     // let [lista, setLista] = useState(list);
     let [getArr,setArr] = useState([])
-    console.log(cant)    
+    //console.log(cant)    
 
     return(
         <div className="cartListContainer">

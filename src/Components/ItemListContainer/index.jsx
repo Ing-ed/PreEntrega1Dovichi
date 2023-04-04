@@ -10,23 +10,23 @@ export function ItemListContainer({seccion}){
     let inicio = ""
 
     let db = getFirestore();
-    // console.log(db,"db");
+    // //console.log(db,"db");
     let itemCollection = collection(db,"items");
     useEffect(() =>{
         if(seccion !== undefined){
             let q = query(itemCollection,where("category", "==", seccion))
-            console.log("seccion es ",seccion)
+            //console.log("seccion es ",seccion)
             getDocs(q).then((snapshot) =>{
                 setProds(snapshot.docs.map((doc) => ({id:doc.id,...doc.data()})))
             })
         }else{
             getDocs(itemCollection).then((snapshot) =>{
                 setProds(snapshot.docs.map((doc) => ({id:doc.id, ...doc.data()})))
-                // console.log(snapshot.docs[0].data()),"then";
+                // //console.log(snapshot.docs[0].data()),"then";
             }).catch((err) => console.log(err))
         }
     },[seccion])
-    // console.log(getProds)
+    // //console.log(getProds)
 
     
     return(

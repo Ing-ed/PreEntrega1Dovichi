@@ -14,7 +14,7 @@ firestore.settings(settings);
 if(data &&(typeof data === "object")){
     Object.keys(data).forEach(docKey =>{
         firestore.collection(collectonKey).doc(docKey).set(data[docKey]).then((res) =>{
-            console.log("document"+docKey+"successfully")
-        }).catch((err) => console.log("error on :",err))
+            //console.log("document"+docKey+"successfully")
+        }).catch((err) => //console.log("error on :",err))
     })
 }

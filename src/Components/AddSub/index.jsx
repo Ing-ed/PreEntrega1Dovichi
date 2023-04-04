@@ -5,7 +5,7 @@ import { CartContext } from "../../CartContext/CartContext";
 export function AddSub({producto,maxCant}){
     let [getCant, setCant] = useState(1)
     let {Add} = useContext(CartContext)
-    // console.log(add);
+    // //console.log(add);
 
 
     function add(){
