@@ -2,7 +2,7 @@ import { ItemDetail } from "../ItemDetail";
 import { useEffect,useState } from "react";
 import { useParams } from 'react-router-dom'
 import {collection, doc,getDoc,getDocs, getFirestore, query, where} from "firebase/firestore"
-import "./estilo.css"
+// import "./estilo.css"
 // import { productos } from "../Mocks/productos";
 
 
@@ -21,7 +21,7 @@ export function ItemDetailContainer(){
     //console.log(getProds[0])
 
     return(
-        <div className="itemListCont">
+        <div className="itemDetailCont">
             <ItemDetail producto={getProds[0]}/>
         </div>
     )

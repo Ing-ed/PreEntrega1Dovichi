@@ -14,7 +14,8 @@ export function BuyerData(){
         0: <></>,
         1: <Form/>,
         2: <Ok/>,
-        3: <Nok/>
+        3: <Nok message={"Error en la compra, vuelva a intentar mas tarde"}/>,
+        4: <Nok message={"Stock insuficiente"}/>
     }
 
     return(

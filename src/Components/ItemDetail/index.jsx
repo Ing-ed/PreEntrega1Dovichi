@@ -4,7 +4,7 @@ import { CartContext } from "../../CartContext/CartContext";
 import { useState } from "react";
 import { useParams } from 'react-router-dom'
 import {doc, getFirestore, getDoc} from "firebase/firestore"
-import { Detail } from "../Detail";
+import { AddSub } from "../AddSub";
 import "./estilo.css"
 
 
@@ -25,12 +25,22 @@ export function ItemDetail({producto}){
     },[])
     // //console.log(producto)
     return(
-        <ul className="itemDetail">
+        <div className="itemDetail">
             {getProd === undefined
                 ?<h1>cargando</h1>
-                :(<Detail producto = {getProd} />)
+                :
+                (
+                    <ul>
+                        <li key={`1 ${getProd.ID}`}><img src={getProd.picture}/></li>
+                        <li key={`2 ${getProd.ID}`}>{getProd.title}</li>
+                        <li key={`3 ${getProd.ID}`}>{getProd.description} dsadsadasdsadasdasdassdas</li>
+                        {   getProd.stock > 1
+                            ?<AddSub producto = {getProd} maxCant={getProd.stock}/>
+                            :<p style={{color:"red"}}>Agotado</p>
+                        }
+                    </ul>)
             }            
             
-        </ul>
+        </div>
     )
 }

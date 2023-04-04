@@ -1,12 +1,12 @@
 .AddSub{
-    width: 80%;
+    width: fit-content;
     height: 100px;
     /* margin-left: 20px; */
     /* border:1px solid red; */
     display: grid;
     grid-row: auto auto;
     grid-column: auto auto auto;
-    align-items: center;
+    align-items: stretch;
     justify-content:center;
 }
 .AddSub *{
@@ -16,8 +16,16 @@
 .AddSub button{
     padding: 0;
 }
-
+.AddSub :nth-child(2){
+    /* border:1px solid red; */
+    align-self: stretch;
+    height: 20px;
+    padding: 0;
+}
 .Agregar{
     grid-column: 1 / 4;
     grid-row: 2 /2;
+    width: 120%;
+    height: 100%;
+    justify-self: center;
 }

@@ -44,7 +44,7 @@ const firebaseConfig = {
 //   messagingSenderId:import.meta.env.REACT_APP_MESSAGEING_SENDER_ID ,
 //   appId:import.meta.env.REACT_APP_APP_ID
 // };
-
+// console.log(process.env.REACT_APP_API_KEY)
 initializeApp(firebaseConfig);
 
 

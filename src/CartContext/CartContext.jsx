@@ -6,23 +6,20 @@ import { Item } from "../Components/Item";
 export let CartContext = createContext();
 
 export function CartProvider({children}){
+    // VARIABLES Y VALORES UTILES
     let [getCant,setCant] = useState(0);
     let [getProds,setProds] = useState([]);
     let [getTot, setTot] = useState(0);
-    let [getModal, setModal] = useState(2);
-    let { categories } = useParams();
-
-    // useEffect(() => {
-
+    let [getModal, setModal] = useState(0);
     let prod = [];
-
     let db = getFirestore();
     let orders = collection(db,"orders")
+
+    // AGREGAR ITEMS AL CARRITO
 
     function onAdd(cantidad,producto){
         setCant(getCant + cantidad);
         setTot(getTot + +cantidad*(+producto.price));
-        //console.log("total",getTot)
         let id = producto.id;
         let index = -1
         getProds.map((item,indx) => {
@@ -30,16 +27,15 @@ export function CartProvider({children}){
                 index = indx;
             }
         })
-        //console.log("productos",getProds);
-        //console.log("prod",producto)
         if(index >= 0){
             getProds[index].cant += cantidad;
-            //console.log(getProds[index])
         } else {
             producto.cant = +cantidad;
             setProds([...getProds,producto]);
         }
     }
+
+    //BORRAR UN ITEM DEL CARRITO (TODOS LOS QUE CORRESPONDAN A ESE PRODUCTO)
     function Delete(index){
         prod = getProds;
         setCant(getCant - +prod[index].cant)
@@ -47,6 +43,8 @@ export function CartProvider({children}){
         prod.splice(index,1);
         setProds(prod);
     }
+
+    // QUITAR UN ITEM DE LA LISTA DE COMPRA (SOLO UNO)
     function Borrar(index){
         setCant(getCant -1)
         prod = getProds;
@@ -61,18 +59,23 @@ export function CartProvider({children}){
         setProds(prod);
         //console.log(prod)
     }
+    // BORRAR CARRITO DE COMPRAS
     function ResetCart(){
         setProds([]);
         setCant(0);
         setTot(0);
     }
+    // MOSTRAR FORMULARIO DE COMPRADOR
     function HabForm(){
         setModal(1);
     }
+    //OCULTAR FORMULARIO DE COMPRADOR
     function desForm(){
         setModal(0);
     }
+    //FINALIZAR COMPRA
     function FinishBuy({Name,Lastname,Phone,Email,}){
+        let ok = 0;
         let order = {
             buyer:{
                 name:Name,
@@ -86,7 +89,7 @@ export function CartProvider({children}){
         }
         getProds.map((item) => {
             if(item.stock < item.cant){
-                //console.log("no se pudo hacer la compra, no hay stock")
+                ok = 1;
                 return
             }
             let ref = doc(db,"items",item.id);
@@ -94,22 +97,30 @@ export function CartProvider({children}){
             .then((res) => console.log("res",res))
             .catch((err) =>console.log(err))
         })
-        // //console.log(order);
-        addDoc(orders,order)
-        .then((res) =>{
-            setModal(2)
-            setTimeout(() =>{
-                ResetCart();
-                setModal(0);
-            },2000);
-        })
-        .catch((err) =>{
-            setModal(3)
-            setTimeout(() =>{
-                // ResetCart();
-                setModal(0);
-            },2000);
-        })
+        console.log(order);
+        if(!ok){
+            addDoc(orders,order)
+            .then((res) =>{
+                setModal(2)
+                setTimeout(() =>{
+                    ResetCart();
+                    setModal(0);
+                },2000);
+            })
+            .catch((err) =>{
+                setModal(3)
+                setTimeout(() =>{
+                    // ResetCart();
+                    setModal(0);
+                },2000);
+            })
+        } else {
+            setModal(4)
+                setTimeout(() =>{
+                    // ResetCart();
+                    setModal(0);
+                },2000);
+        }
     }
 
     return(

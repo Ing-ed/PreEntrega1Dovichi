@@ -1,6 +1,6 @@
 import { useRef } from "react"
 
-export function Ok(){
+export function Ok({message}){
     
     let ref = useRef("referencia")
    
@@ -12,8 +12,7 @@ export function Ok(){
     return(
         <div onClick={escape} ref = {ref} className="FormularioCompraCont">
             <div className="FormularioCompra">
-                <h1>Compra finalizada</h1>
-                <h1>Gracias por su compra</h1>
+                <h1>{message}</h1>
             </div>
         </div>
     )
