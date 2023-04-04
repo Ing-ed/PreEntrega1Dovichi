@@ -122,7 +122,7 @@ export function CartProvider({children}){
                                         Finish: FinishBuy,
                                         Reset:ResetCart,
                                         HabForm:HabForm,
-                                        desForm,desForm,
+                                        desForm:desForm,
                                         showModal:getModal}}>
             {children}
         </CartContext.Provider>

@@ -1,12 +1,10 @@
 .itemDetail{
-    /* width: fit-content; */
     width: 60rem;
     padding: 1rem;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    /* border:2px solid red; */
     background-color: #FAFAFA;
     justify-content: center;
     align-items: center;
@@ -14,7 +12,6 @@
     gap:4rem;
 }
 .itemDetail *{
-    background-color: #FAFAFA;
     color:#232323;
     font-weight: bold;
     font-size: 20px;
@@ -26,10 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border-right: solid #232323; */
-    /* margin-top: 15rem; */
 }
 .itemDetail p{
     align-self: flex-start;
-    /* width:100%; */
 }
