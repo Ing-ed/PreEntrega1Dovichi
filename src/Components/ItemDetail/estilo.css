@@ -1,9 +1,11 @@
 .itemDetailCont{
     width: 100%;
     margin:100px auto;
+    background-color: #FAFAFA;
     /* width: 100%; */
 }
 .itemDetail ul{
+    background-color: #FAFAFA;
     width: fit-content;
     margin: auto;
     display: grid;
@@ -11,6 +13,11 @@
     grid-template-rows: 20px auto auto;
     /* border:1px solid red; */
     list-style: none;
+    gap: 10px;
+}
+.itemDetail ul *{
+    background-color: #FAFAFA;
+    color: #323232;
 }
 .itemDetail ul li:nth-child(1){
     /* border:1px solid blue; */
@@ -34,7 +41,7 @@
     gap:10px;
 }
 .itemDetail ul div button{
-    border: 1px solid #FAFAFA;
+    border: 1px solid #323232;
     border-radius: 10px;
     padding: 10px;
 }
