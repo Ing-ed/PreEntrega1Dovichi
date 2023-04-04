@@ -27,6 +27,7 @@ export function CartProvider({children}){
                 index = indx;
             }
         })
+        // if(getProds[index].stock >? ge)
         if(index >= 0){
             getProds[index].cant += cantidad;
         } else {

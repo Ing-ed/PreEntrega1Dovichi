@@ -25,3 +25,4 @@ dist-ssr
 
 # ClaveFirebase/
 src/Components/Detail/
+.env.local
