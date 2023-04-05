@@ -9,10 +9,10 @@
 }
 .itemDetail ul{
     background-color: #FAFAFA;
-    width: fit-content;
+    width: 100%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(auto-fill, auto);
     grid-template-rows: 20px auto auto;
     /* border:1px solid red; */
     list-style: none;
