@@ -29,4 +29,5 @@ src/Components/Detail/
 .firebaserc
 firebase.json
 firebase-debug.log
+.firebase/hosting.ZGlzdA.cache
 public/
