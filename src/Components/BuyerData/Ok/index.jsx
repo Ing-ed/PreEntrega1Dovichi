@@ -1,7 +1,8 @@
-import { useRef } from "react"
+import { useRef, useContext } from "react";
+import { CartContext } from "../../../CartContext/CartContext";
 
 export function Ok({message}){
-    
+    let {desForm} = useContext(CartContext);
     let ref = useRef("referencia")
    
     function escape(event){

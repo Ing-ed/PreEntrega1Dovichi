@@ -34,7 +34,7 @@ export function ItemDetail({producto}){
                         <li key={`1 ${getProd.ID}`}><img src={getProd.picture}/></li>
                         <li key={`2 ${getProd.ID}`}>{getProd.title}</li>
                         <li key={`3 ${getProd.ID}`}>{getProd.description} dsadsadasdsadasdasdassdas</li>
-                        {   getProd.stock > 1
+                        {   getProd.stock >= 1
                             ?<AddSub producto = {getProd} maxCant={getProd.stock}/>
                             :<p style={{color:"red"}}>Agotado</p>
                         }

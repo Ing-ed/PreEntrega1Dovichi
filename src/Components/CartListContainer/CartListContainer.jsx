@@ -23,8 +23,8 @@ export function CartListContainer(){
                             <li key={`3 ${item.id}`}><p>{item.description}</p></li>
                             <li key = {`4 ${item.id}`}><p>${+item.price*+item.cant}</p></li>
                             <div className="masmenos">
-                                <li ><button onClick = {()=>-Add(1,item)}>+1</button></li>
-                                <li ><button onClick = {()=>-Borrar(index)}>-1</button></li>
+                                <li ><button onClick = {()=> Borrar(index)}>-1</button></li>
+                                <li ><button onClick = {()=> Add(1,item)}>+1</button></li>
                             </div>
                             <li className="img" key={`5 ${item.id}`}><img src={item.picture}></img></li>
                             <li className="cerrar"><button onClick = {()=>Delete(index)}>Quitar</button></li>
