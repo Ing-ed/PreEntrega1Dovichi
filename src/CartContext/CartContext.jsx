@@ -15,6 +15,11 @@ export function CartProvider({children}){
     let db = getFirestore();
     let orders = collection(db,"orders")
 
+    function OutOfStock(){
+        setModal(4)
+        setTimeout(() =>setModal(0),2000);
+    }
+
     // AGREGAR ITEMS AL CARRITO
 
     function onAdd(cantidad,producto){
@@ -28,11 +33,14 @@ export function CartProvider({children}){
 
         let act = getProds.map((item) =>{
             if(item.id === producto.id){
+                console.log(item.cant+ cantidad)
                 if(item.cant+ cantidad <= item.stock){
                     setCant(getCant + +cantidad);
                     setTot(getTot + +cantidad*(+producto.price));
                     console.log([...getProds,{...item, cant: item.cant + +cantidad}])
                     return {...item, cant: item.cant + +cantidad}
+                } else {
+                    OutOfStock();
                 }
             }
             return item;
@@ -121,8 +129,7 @@ export function CartProvider({children}){
             })
         })
         if(nok){
-            setModal(4)
-            setTimeout(() =>setModal(0),2000);
+            OutOfStock();
         }
     }
 
@@ -137,6 +144,7 @@ export function CartProvider({children}){
                                         Reset:ResetCart,
                                         HabForm:HabForm,
                                         desForm:desForm,
+                                        OutOfStock:OutOfStock,
                                         showModal:getModal}}>
             {children}
         </CartContext.Provider>
