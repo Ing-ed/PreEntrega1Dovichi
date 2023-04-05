@@ -35,12 +35,11 @@
 }
 .itemDetail ul div{
     /* border: 1px solid salmon; */
-    grid-column: 2 /4;
-    justify-self: end;
+    grid-column: 1 /2;
     display: flex;
     height: auto;
     justify-content: center;
-    width: 100%;
+    width: 50%;
     gap:10px;
 }
 .itemDetail ul div button{
@@ -51,6 +50,10 @@
     height: fit-content;
     padding: 2px;
     align-self: center;
+    min-width: 40px;
+    background-color: #323232;
+    color: #FAFAFA;
+    box-shadow: 2px 2px 5px #232323;
     /* padding: 10px; */
 }
 .itemDetail ul div :not(button){

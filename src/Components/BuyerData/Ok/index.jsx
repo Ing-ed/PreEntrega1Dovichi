@@ -12,7 +12,7 @@ export function Ok({message}){
     return(
         <div onClick={escape} ref = {ref} className="FormularioCompraCont">
             <div className="FormularioCompra">
-                <h1>{message}</h1>
+                <h1>Muchas gracias por su compra!!</h1>
             </div>
         </div>
     )

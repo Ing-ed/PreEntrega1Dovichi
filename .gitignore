@@ -26,3 +26,7 @@ dist-ssr
 # ClaveFirebase/
 src/Components/Detail/
 .env.local
+.firebaserc
+firebase.json
+firebase-debug.log
+public/

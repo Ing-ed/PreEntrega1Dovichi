@@ -18,22 +18,28 @@ export function CartProvider({children}){
     // AGREGAR ITEMS AL CARRITO
 
     function onAdd(cantidad,producto){
-        setCant(getCant + cantidad);
-        setTot(getTot + +cantidad*(+producto.price));
-        let id = producto.id;
-        let index = -1
-        getProds.map((item,indx) => {
-            if(item.id === id){
-                index = indx;
-            }
-        })
-        // if(getProds[index].stock >? ge)
-        if(index >= 0){
-            getProds[index].cant += cantidad;
-        } else {
-            producto.cant = +cantidad;
-            setProds([...getProds,producto]);
+        let add = () => {
+            setCant(getCant + +cantidad);
+            setTot(getTot + +cantidad*(+producto.price));
+            return([{...producto,cant:cantidad}])
         }
+
+        let act = getProds.map((item) =>{
+            if(item.id === producto.id){
+                if(item.cant+ cantidad <= item.stock){
+                    setCant(getCant + +cantidad);
+                    setTot(getTot + +cantidad*(+producto.price));
+                    return {...item, cant: item.cant + +cantidad}
+                }
+            }
+            return item;
+        })
+        setProds(getProds.length > 0? act:add)
+        // if(getProds.length === 0){
+        //     setProds(add);
+        // } else {
+        //     setProds(act);
+        // }
     }
 
     //BORRAR UN ITEM DEL CARRITO (TODOS LOS QUE CORRESPONDAN A ESE PRODUCTO)
@@ -76,7 +82,7 @@ export function CartProvider({children}){
     }
     //FINALIZAR COMPRA
     function FinishBuy({Name,Lastname,Phone,Email,}){
-        let ok = 0;
+        let nok = 0;
         let order = {
             buyer:{
                 name:Name,
@@ -90,37 +96,29 @@ export function CartProvider({children}){
         }
         getProds.map((item) => {
             if(item.stock < item.cant){
-                ok = 1;
+                nok = 1;
                 return
             }
             let ref = doc(db,"items",item.id);
             updateDoc(ref,{stock:(+item.stock - +item.cant)})
-            .then((res) => console.log("res",res))
-            .catch((err) =>console.log(err))
+            .then((res) => {
+                addDoc(orders,order)
+                .then(()=>{
+                    setModal(2);
+                    setTimeout(() =>{
+                        ResetCart();
+                        setModal(0);
+                    },2000);
+                })
+                .catch(() =>{
+                    setModal(3);
+                    setTimeout(() => setModal(0),2000);
+                })
+            })
         })
-        console.log(order);
-        if(!ok){
-            addDoc(orders,order)
-            .then((res) =>{
-                setModal(2)
-                setTimeout(() =>{
-                    ResetCart();
-                    setModal(0);
-                },2000);
-            })
-            .catch((err) =>{
-                setModal(3)
-                setTimeout(() =>{
-                    // ResetCart();
-                    setModal(0);
-                },2000);
-            })
-        } else {
+        if(nok){
             setModal(4)
-                setTimeout(() =>{
-                    // ResetCart();
-                    setModal(0);
-                },2000);
+            setTimeout(() =>setModal(0),2000);
         }
     }
 
