@@ -33,6 +33,15 @@ const firebaseConfig = {
   messagingSenderId:import.meta.env.VITE_MESSAGESINGSENDERID,
   appId:import.meta.env.VITE_APPID
 };
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCJt0AThhP18AvI2OglP1kVZWVmZEjBlC4",
+//   authDomain: "ecomercerjs.firebaseapp.com",
+//   projectId: "ecomercerjs",
+//   storageBucket: "ecomercerjs.appspot.com",
+//   messagingSenderId: "782492432867",
+//   appId: "1:782492432867:web:5c73744b078b0b1b2ec8d6"
+// };
 initializeApp(firebaseConfig);
 
 

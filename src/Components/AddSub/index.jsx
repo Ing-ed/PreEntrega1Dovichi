@@ -17,9 +17,9 @@ export function AddSub({producto,maxCant}){
 
     return(
         <div className="AddSub">
-            <button className="Button+" onClick={() => add()}>+</button>
+            <button className="Button-" onClick={() => sub()}>-</button>
             <span className="Cantidad">{getCant}</span>
-            <button className="Button-" onClick={() => sub()}>-</button><br></br>
+            <button className="Button+" onClick={() => add()}>+</button><br></br>
             <button className="Agregar" onClick={() => Add(Number(getCant),producto)}>Agregar a carrito</button>
         </div>
     )
