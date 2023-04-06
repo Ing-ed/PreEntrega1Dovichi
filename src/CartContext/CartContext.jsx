@@ -1,7 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { doc, updateDoc, addDoc, collection, getFirestore } from "firebase/firestore";
-import { useParams } from "react-router-dom";
-import { Item } from "../Components/Item";
 
 export let CartContext = createContext();
 

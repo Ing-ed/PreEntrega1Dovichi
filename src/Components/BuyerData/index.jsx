@@ -3,13 +3,12 @@ import { Nok } from "./Nok";
 import { Form } from "./Form";
 import { CartContext } from "../../CartContext/CartContext"
 import {useContext } from "react"
-// import {useForm} from 'react-hook-form'
 
 export function BuyerData(){
     let {showModal} = useContext(CartContext);
     //console.log(ref);
 
-    
+    // MODAL HACE REFERENCIA AL FORMULARIO QUE SE LE MUESTRA AL USUARIO O BIEN LOS MENSAJES DE OK O NOK
     let modal = {
         0: <></>,
         1: <Form/>,

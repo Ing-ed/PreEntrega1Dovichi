@@ -1,14 +1,9 @@
 import { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
-import { useEffect, useState } from "react";
 import "./estilo.css"
-import { AddSub } from "../AddSub";
 
 export function CartListContainer(){
-    let {Delete, list, Borrar, cant, Add,total, Finish, Reset, HabForm } = useContext(CartContext)
-    // let [lista, setLista] = useState(list);
-    let [getArr,setArr] = useState([])
-    //console.log(cant)    
+    let {Delete, list, Borrar, cant, Add,total, Reset, HabForm } = useContext(CartContext)
 
     return(
         <div className="cartListContainer">

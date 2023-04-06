@@ -1,9 +1,7 @@
 import { ItemDetail } from "../ItemDetail";
 import { useEffect,useState } from "react";
 import { useParams } from 'react-router-dom'
-import {collection, doc,getDoc,getDocs, getFirestore, query, where} from "firebase/firestore"
-// import "./estilo.css"
-// import { productos } from "../Mocks/productos";
+import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 
 
 
@@ -18,7 +16,6 @@ export function ItemDetailContainer(){
             setProds(snapshot.docs.map((doc) => ({id:doc.id,...doc.data()})))
         })
     },[ID])
-    //console.log(getProds[0])
 
     return(
         <div className="itemDetailCont">

@@ -1,11 +1,10 @@
 import "./estilo.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 
 export function AddSub({producto,maxCant}){
     let [getCant, setCant] = useState(1)
     let {Add, OutOfStock} = useContext(CartContext)
-    // //console.log(add);
 
     
     function add(){
