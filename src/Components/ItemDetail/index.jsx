@@ -29,6 +29,13 @@ export function ItemDetail({producto}){
             {getProd === undefined
                 ?<h1>cargando</h1>
                 :
+                // (<>
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                // </>
+                // )
                 (
                     <ul>
                         <li key={`1 ${getProd.ID}`}><img src={getProd.picture}/></li>

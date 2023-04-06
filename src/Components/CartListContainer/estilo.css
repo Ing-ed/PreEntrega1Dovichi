@@ -65,6 +65,8 @@
 }
 .Total button{
     background-color: #232323;
+    width: 100px;
+    height: 50px;
     color: #FAFAFA;
     border-radius: 10px;
     justify-self: end;
@@ -74,5 +76,11 @@
     background-color: #FAFAFA;
     display:flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
+}
+.Total :nth-child(2){
+    display: flex;
+    flex-direction: column;
+    gap:5px;
 }

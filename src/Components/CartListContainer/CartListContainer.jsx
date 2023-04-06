@@ -37,10 +37,10 @@ export function CartListContainer(){
                     <h3>TOTAL:</h3>
                     <h3>${total}</h3>
                 </div>
-                {cant > 0 && <>
+                {cant > 0 && <div>
                 <button onClick={HabForm}>Terminar compra</button>
                 <button onClick={Reset}>Limpiar Carrito</button>
-                </>}
+                </div>}
                 
             </div>
         </div>
