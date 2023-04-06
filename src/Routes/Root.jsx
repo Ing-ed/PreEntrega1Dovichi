@@ -10,9 +10,10 @@ import { initializeApp } from "firebase/app";
 import './App.css'
 import { BuyerData } from '../Components/BuyerData'
 import { CartContext } from '../CartContext/CartContext'
+import { Footer } from '../Components/Footer'
 
-let menu = ["uControladores","Placas de desarrollo","Todos"]
-let brand = "IngED - Electronics"
+let menu = ["uControladores","Placas de desarrollo","FPGA","Todos"]
+let brand = "IngED - Embebidos"
 
 // //console.log(process.env.REACT_APP_API_KEY,"Console")
 
@@ -31,6 +32,7 @@ function Root() {
     undefined:<ItemListContainer/>,
     uControladores: <ItemListContainer seccion={"uControladores"}/>,
     Placasdedesarrollo: <ItemListContainer seccion={"Placasdedesarrollo"}/>,
+    FPGA: <ItemListContainer seccion={"FPGA"}/>,
     Todos:<ItemListContainer/>,
     item:<ItemDetailContainer/>,
     Cart: <CartListContainer/>
@@ -38,9 +40,10 @@ function Root() {
   // //console.log(getCant, "inicio")
   return (
     <>
-    <NavBar nombre = {brand} menu = {menu}/>
-    {rutas[categories]}
-    <BuyerData/>
+      <NavBar nombre = {brand} menu = {menu}/>
+      {rutas[categories]}
+      <BuyerData/>
+      <Footer nombre = {brand}/>
     </>
   )
 }

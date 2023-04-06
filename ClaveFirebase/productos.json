@@ -46,6 +46,30 @@
         "picture":"https://www.electrocomponentes.com/Image/0/1200_1200-STM32F103C8T6_1.jpg",
         "category":"uControladores",
         "stock": 10
+    },
+    "7":{
+        "title":"Altera cyclon 2 ",
+        "description":"lorem ipsum description",
+        "price":"2",
+        "picture":"https://http2.mlstatic.com/D_NQ_NP_746870-MLA44039329169_112020-O.jpg",
+        "category":"FPGA",
+        "stock": 10
+    },
+    "8":{
+        "title":"Raspberry PI PICO ",
+        "description":"lorem ipsum description",
+        "price":"2",
+        "picture":"https://ar.mouser.com/images/marketingid/2021/img/188683228.png?v=062422.0420",
+        "category":"Placasdedesarrollo",
+        "stock": 10
+    },
+    "9":{
+        "title":"Xilinx Artix 7",
+        "description":"lorem ipsum description",
+        "price":"2",
+        "picture":"https://www.oegalaxy.com.vn/uploads/images/news/0.250206001444980911Nexys4-obl-600[1].png",
+        "category":"FPGA",
+        "stock": 10
     }
-}
 
+}
