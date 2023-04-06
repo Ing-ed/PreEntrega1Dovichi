@@ -11,7 +11,7 @@ import './App.css'
 import { BuyerData } from '../Components/BuyerData'
 import { CartContext } from '../CartContext/CartContext'
 
-let menu = ["uControladores","Placas de desarrollo"]
+let menu = ["uControladores","Placas de desarrollo","Todos"]
 let brand = "IngED - Electronics"
 
 // //console.log(process.env.REACT_APP_API_KEY,"Console")
@@ -31,6 +31,7 @@ function Root() {
     undefined:<ItemListContainer/>,
     uControladores: <ItemListContainer seccion={"uControladores"}/>,
     Placasdedesarrollo: <ItemListContainer seccion={"Placasdedesarrollo"}/>,
+    Todos:<ItemListContainer/>,
     item:<ItemDetailContainer/>,
     Cart: <CartListContainer/>
   }

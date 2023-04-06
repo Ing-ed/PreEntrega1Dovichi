@@ -20,7 +20,32 @@
         "description":"lorem ipsum description",
         "price":"2",
         "picture":"https://ar.mouser.com/images/marketingid/2018/img/137015602.png?v=102422.0419",
-        "category":"placasDesarrollo",
+        "category":"Placasdedesarrollo",
+        "stock": 10
+    },
+    "4":{
+        "title":"Lpcxpresso1769",
+        "description":"lorem ipsum description",
+        "price":"2",
+        "picture":"https://www.nxp.com/assets/images/en/dev-board-image/BOARD-OM13085-PRODUCT-SHOT.png",
+        "category":"Placasdedesarrollo",
+        "stock": 10
+    },
+    "5":{
+        "title":"SLSTK2020A ",
+        "description":"lorem ipsum description",
+        "price":"2",
+        "picture":"https://www.silabs.com/content/dam/siliconlabs/images/products/microcontrollers/8-bit_mcus/efm8_busy_bee/efm8bb1lck-efm8-bb1-low-cost-kit.png",
+        "category":"Placasdedesarrollo",
+        "stock": 10
+    },
+    "6":{
+        "title":"STM32F103C8T6 ",
+        "description":"lorem ipsum description",
+        "price":"2",
+        "picture":"https://www.electrocomponentes.com/Image/0/1200_1200-STM32F103C8T6_1.jpg",
+        "category":"uControladores",
         "stock": 10
     }
 }
+
