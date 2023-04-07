@@ -15,7 +15,7 @@ export function CartListContainer(){
                         <ul key={`lista ${index}`} className="itemCart">
                             <li key={`1 ${item.id}`}><p>{item.cant}</p></li>
                             <li key={`2 ${item.id}`}><p>{item.title}</p></li>
-                            <li key={`3 ${item.id}`}><p>{item.description}</p></li>
+                            <br/>
                             <li key = {`4 ${item.id}`}><p>${+item.price*+item.cant}</p></li>
                             <div className="masmenos">
                                 <li ><button onClick = {()=> Borrar(index)}>-1</button></li>

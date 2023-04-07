@@ -1,5 +1,5 @@
-import { Ok } from "./Ok";
-import { Nok } from "./Nok";
+
+import { OkNok } from "./OkNok";
 import { Form } from "./Form";
 import { CartContext } from "../../CartContext/CartContext"
 import {useContext } from "react"
@@ -12,9 +12,9 @@ export function BuyerData(){
     let modal = {
         0: <></>,
         1: <Form/>,
-        2: <Ok/>,
-        3: <Nok message={"Error en la compra, vuelva a intentar mas tarde"}/>,
-        4: <Nok message={"Stock insuficiente"}/>
+        2: <OkNok message={"Muchas gracias por su compra!!"}/>,
+        3: <OkNok message={"Error en la compra, vuelva a intentar mas tarde"}/>,
+        4: <OkNok message={"Stock insuficiente"}/>
     }
 
     return(

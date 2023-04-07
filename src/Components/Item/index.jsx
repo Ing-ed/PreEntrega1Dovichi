@@ -14,7 +14,7 @@ export function Item({producto}){
         <ul className="item">
             <Link to = {`/item/${getSelect}`}>
                 <li key={`1 ${producto.id}`}><p>{producto.title}</p></li>
-                <li key={`2 ${producto.id}`}><p>{producto.description}</p></li>
+                {/* <li key={`2 ${producto.id}`}><p>{producto.description}</p></li> */}
                 <li key={`3 ${producto.id}`}><img src={producto.picture}></img></li>
                 <li key={`4 ${producto.id}`}><p>${producto.price}</p></li>
             </Link>

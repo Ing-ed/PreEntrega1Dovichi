@@ -8,6 +8,9 @@ nav {
 nav *{
     font-size: 20px;
 }
+nav button:hover{
+    padding: 0 5px;
+}
 .lista {
     width: 100%;
     list-style: none;

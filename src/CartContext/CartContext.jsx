@@ -9,6 +9,7 @@ export function CartProvider({children}){
     let [getProds,setProds] = useState([]);
     let [getTot, setTot] = useState(0);
     let [getModal, setModal] = useState(0);
+    let [getBuyId, setBuyId] = useState(undefined);
     let prod = [];
     let db = getFirestore();
     let orders = collection(db,"orders")
@@ -25,17 +26,14 @@ export function CartProvider({children}){
         let add = () => {
             setCant(getCant + +cantidad);
             setTot(getTot + +cantidad*(+producto.price));
-            console.log([...getProds,{...producto,cant:cantidad}])
             return([...getProds,{...producto,cant:cantidad}])
         }
 
         let act = getProds.map((item) =>{
             if(item.id === producto.id){
-                console.log(item.cant+ cantidad)
                 if(item.cant+ cantidad <= item.stock){
                     setCant(getCant + +cantidad);
                     setTot(getTot + +cantidad*(+producto.price));
-                    console.log([...getProds,{...item, cant: item.cant + +cantidad}])
                     return {...item, cant: item.cant + +cantidad}
                 } else {
                     OutOfStock();
@@ -43,7 +41,6 @@ export function CartProvider({children}){
             }
             return item;
         })
-        console.log(nuevoProd)
         setProds(nuevoProd >= 0? act:add)
         // if(getProds.length === 0){
         //     setProds(add);
@@ -81,6 +78,7 @@ export function CartProvider({children}){
         setProds([]);
         setCant(0);
         setTot(0);
+        setBuyId(undefined);
     }
     // MOSTRAR FORMULARIO DE COMPRADOR
     function HabForm(){
@@ -113,12 +111,13 @@ export function CartProvider({children}){
             updateDoc(ref,{stock:(+item.stock - +item.cant)})
             .then((res) => {
                 addDoc(orders,order)
-                .then(()=>{
+                .then((res)=>{
+                    setBuyId(res.id)
                     setModal(2);
                     setTimeout(() =>{
                         ResetCart();
                         setModal(0);
-                    },2000);
+                    },5000);
                 })
                 .catch(() =>{
                     setModal(3);
@@ -142,6 +141,7 @@ export function CartProvider({children}){
                                         Reset:ResetCart,
                                         HabForm:HabForm,
                                         desForm:desForm,
+                                        buyId : getBuyId,
                                         OutOfStock:OutOfStock,
                                         showModal:getModal}}>
             {children}
