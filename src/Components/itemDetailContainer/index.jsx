@@ -7,15 +7,15 @@ import {collection, getDocs, getFirestore, query, where} from "firebase/firestor
 
 export function ItemDetailContainer(){
     let [getProds,setProds] = useState([])
-    const {ID} = useParams();
+    const {Id} = useParams();
     let db = getFirestore();
     let itemCollection = collection(db,"items");
     useEffect(() =>{        
-        let q = query(itemCollection,where("id", "==", ID))
+        let q = query(itemCollection,where("id", "==", Id))
         getDocs(q).then((snapshot) =>{
             setProds(snapshot.docs.map((doc) => ({id:doc.id,...doc.data()})))
         })
-    },[ID])
+    },[Id])
 
     return(
         <div className="itemDetailCont">
