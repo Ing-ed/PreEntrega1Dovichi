@@ -7,11 +7,11 @@ import { AddSub } from "../AddSub";
 import "./estilo.css"
 
 
-export function ItemDetail({producto}){
+export function ItemDetail(){
     let [getProd,setProd] = useState({})
-    let {ID} = useParams();
+    let {Id} = useParams();
     let db = getFirestore();
-    let ref = doc(db,"items",ID);
+    let ref = doc(db,"items",Id);
     useEffect(() => {
         getDoc(ref).then((snapshot) =>{
             if(snapshot.exists()){

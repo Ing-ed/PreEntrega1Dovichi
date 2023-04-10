@@ -1,5 +1,5 @@
+// SCRIPT QUE SIRVE PARA SUBIR LOS PRODUCTOS (PRODUCTOS.JSON)
 let admin = require("firebase-admin");
-// const { Timestamp } = require("firebase/firestore");
 
 let serviceAccount = require("./pass.json");
 let data = require("./productos.json")
