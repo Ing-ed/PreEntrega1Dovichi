@@ -10,3 +10,7 @@ npm install
 una vez instalado ejecuta el siguiente comando.
 npm run dev
 para poder iniciar
+
+# Web APP
+puede ver el proyecto funcionando utilizando el servicio de hosting de firebase
+el link para visualizarlo es https://elecinged.web.app/
